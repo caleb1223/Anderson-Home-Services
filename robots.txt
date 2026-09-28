@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andersonhomedmv.com/sitemap.xml
+Sitemap: https://andersonhomeservicesdmv.com/sitemap.xml
