@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://andersonhomedmv.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://andersonhomedmv.com/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://andersonhomedmv.com/portfolio.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://andersonhomedmv.com/faqs.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://andersonhomedmv.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://andersonhomedmv.com/privacy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://andersonhomedmv.com/accessibility.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://andersonhomedmv.com/</loc></url>
+  <url><loc>https://andersonhomedmv.com/services.html</loc></url>
+  <url><loc>https://andersonhomedmv.com/portfolio.html</loc></url>
+  <url><loc>https://andersonhomedmv.com/same-day.html</loc></url>
+  <url><loc>https://andersonhomedmv.com/faqs.html</loc></url>
+  <url><loc>https://andersonhomedmv.com/policies.html</loc></url>
+  <url><loc>https://andersonhomedmv.com/contact.html</loc></url>
+  <url><loc>https://andersonhomedmv.com/privacy.html</loc></url>
+  <url><loc>https://andersonhomedmv.com/accessibility.html</loc></url>
 </urlset>
