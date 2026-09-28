@@ -1,6 +1,6 @@
 {
   "name": "anderson-home-services",
   "private": true,
-  "scripts": { "test": "node --test tests/site.test.mjs" },
+  "scripts": { "test": "node --test tests/site.test.mjs", "build": "node scripts/build-public.mjs" },
   "devDependencies": { "playwright": "1.62.1" }
 }
