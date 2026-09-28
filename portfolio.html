@@ -534,20 +534,40 @@
       background: rgba(255,247,234,.06);
     }
     .case-images .paper-shot { object-position: center; }
-    .case-images.repair-sequence { grid-template-columns: repeat(4, 1fr); }
-    .case-images.repair-sequence img { height: 290px; object-position: center; }
-    .repair-step { position: relative; background: rgba(255,247,234,.04); }
-    .repair-step span {
+    .case-images.repair-sequence {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+    .case-images.repair-sequence img {
+      height: 290px;
+      object-position: center;
+    }
+    .repair-step {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: rgba(255,247,234,.04);
+    }
+    .repair-step figcaption {
       position: absolute;
       left: 10px;
       bottom: 10px;
-      padding: 5px 8px;
+      margin: 0;
+      padding: 6px 9px;
       border-radius: 6px;
-      background: rgba(18,12,8,.88);
+      background: rgba(18,12,8,.82);
       color: var(--cream);
-      font-size: .72rem;
-      font-weight: 900;
-      letter-spacing: .04em;
+      font-size: .73rem;
+      line-height: 1.2;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+      backdrop-filter: blur(3px);
+    }
+    .repair-step figcaption strong { color: var(--cream); }
+    @media (max-width:760px) {
+      .case-images.repair-sequence { grid-template-columns: repeat(2, 1fr); }
+      .case-images.repair-sequence img { height: 260px; }
     }
     .case-body { padding: 20px; }
     .case-body h3 { color: var(--cream); font-size: 1.18rem; margin-bottom: 8px; }
@@ -741,11 +761,11 @@
       outline-offset: 3px;
     }
   </style>
-<meta content="index, follow" name="robots"/><meta content="Furniture Assembly Portfolio | Anderson Home Services" property="og:title"/><meta content="Furniture assembly, repair, reassembly, office setup, move-in logistics, and home setup project photos from Anderson Home Services." property="og:description"/><meta content="website" property="og:type"/><meta content="https://andersonhomeservicesdmv.com/portfolio.html" property="og:url"/><meta content="en_US" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/>
+<meta content="index, follow" name="robots"/><meta content="Furniture Assembly Portfolio | Anderson Home Services" property="og:title"/><meta content="Furniture assembly, repair, reassembly, office setup, move-in logistics, and home setup project photos from Anderson Home Services." property="og:description"/><meta content="website" property="og:type"/><meta content="https://andersonhomeservicesdmv.com/portfolio" property="og:url"/><meta content="en_US" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/>
 <meta property="og:image" content="https://andersonhomeservicesdmv.com/assets/social-card.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta name="twitter:image" content="https://andersonhomeservicesdmv.com/assets/social-card.png"/><link href="https://andersonhomeservicesdmv.com/portfolio.html" rel="canonical"/><meta content="Furniture Assembly Portfolio | Anderson Home Services" name="twitter:title"/><meta content="Furniture assembly, repair, reassembly, office setup, move-in logistics, and home setup project photos from Anderson Home Services." name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Anderson Home Services","alternateName":"Anderson Home DMV","url":"https://andersonhomeservicesdmv.com/","telephone":"+1-218-235-3924","email":"caleb1223@gmail.com","founder":{"@type":"Person","name":"Caleb Anderson","sameAs":"https://www.linkedin.com/in/caleb1223/"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"],"serviceArea":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","address":"Arlington, VA"}},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:00","closes":"23:59"}],"priceRange":"$$","serviceType":["Furniture Assembly","IKEA Furniture Assembly","Move-In Setup","Remote Move-In Setup","Apartment Furniture Setup","Furniture Reassembly","Moving Help","Hauling"],"description":"Furniture assembly, move-in setup, including remote apartment setup before arrival, reassembly, hauling, and practical home help across Washington DC, Northern Virginia, and Montgomery County, MD.","sameAs":["https://www.taskrabbit.com/r/profile/caleb1223","https://www.linkedin.com/in/caleb1223/","https://www.google.com/maps/place/Anderson+Home+Services/@38.9290961,-77.2108355,11.24z/data=!4m18!1m9!3m8!1s0x2713ac409f9a4897:0xeb257711c4454a1e!2sAnderson+Home+Services!8m2!3d38.9038394!4d-77.1221009!9m1!1b1!16s%2Fg%2F11z93sndqy!3m7!1s0x2713ac409f9a4897:0xeb257711c4454a1e!8m2!3d38.9038394!4d-77.1221009!9m1!1b1!16s%2Fg%2F11z93sndqy?hl=en&entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"]}</script>
+<meta name="twitter:image" content="https://andersonhomeservicesdmv.com/assets/social-card.png"/><link href="https://andersonhomeservicesdmv.com/portfolio" rel="canonical"/><meta content="Furniture Assembly Portfolio | Anderson Home Services" name="twitter:title"/><meta content="Furniture assembly, repair, reassembly, office setup, move-in logistics, and home setup project photos from Anderson Home Services." name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Anderson Home Services","alternateName":"Anderson Home DMV","url":"https://andersonhomeservicesdmv.com/","telephone":"+1-218-235-3924","email":"caleb1223@gmail.com","founder":{"@type":"Person","name":"Caleb Anderson","sameAs":"https://www.linkedin.com/in/caleb1223/"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"],"serviceArea":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","address":"Arlington, VA"}},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:00","closes":"23:59"}],"priceRange":"$$","serviceType":["Furniture Assembly","IKEA Furniture Assembly","Move-In Setup","Remote Move-In Setup","Apartment Furniture Setup","Furniture Reassembly","Moving Help","Hauling"],"description":"Furniture assembly, move-in setup, including remote apartment setup before arrival, reassembly, hauling, and practical home help across Washington DC, Northern Virginia, and Montgomery County, MD.","sameAs":["https://www.taskrabbit.com/r/profile/caleb1223","https://www.linkedin.com/in/caleb1223/","https://www.google.com/maps/place/Anderson+Home+Services/@38.9290961,-77.2108355,11.24z/data=!4m18!1m9!3m8!1s0x2713ac409f9a4897:0xeb257711c4454a1e!2sAnderson+Home+Services!8m2!3d38.9038394!4d-77.1221009!9m1!1b1!16s%2Fg%2F11z93sndqy!3m7!1s0x2713ac409f9a4897:0xeb257711c4454a1e!8m2!3d38.9038394!4d-77.1221009!9m1!1b1!16s%2Fg%2F11z93sndqy?hl=en&entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"]}</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
 <meta name="theme-color" content="#17100b"/>
@@ -810,15 +830,27 @@
 </article>
 <article class="card project-case">
 <div class="case-images repair-sequence">
-<div class="repair-step"><img alt="Damaged wooden furniture leg before repair" src="assets/repair-damaged.jpg"/><span>1 · Failed joint</span></div>
-<div class="repair-step"><img alt="Damaged wood removed to prepare the furniture leg for repair" src="assets/repair-core.jpg"/><span>2 · Prepared</span></div>
-<div class="repair-step"><img alt="New wood core bonded into the damaged furniture leg" src="assets/repair-rebuild.jpg"/><span>3 · Rebuilt core</span></div>
-<div class="repair-step"><img alt="Rebuilt furniture leg attachment with a new threaded connection" src="assets/repair-threaded-insert.jpg"/><span>4 · New connection</span></div>
+<figure class="repair-step">
+<img alt="Bedpost joint rebuilt with solid wood dowel replacing weakened material" loading="lazy" src="assets/repair-rebuild.jpg"/>
+<figcaption><strong>1. Rebuilt wood</strong></figcaption>
+</figure>
+<figure class="repair-step">
+<img alt="Rebuilt bedpost joint trimmed flush and marked for the new connection" loading="lazy" src="assets/repair-damaged.jpg"/>
+<figcaption><strong>2. Prepared connection</strong></figcaption>
+</figure>
+<figure class="repair-step">
+<img alt="Repaired bedpost joint with a new threaded connection installed" loading="lazy" src="assets/repair-threaded-insert.jpg"/>
+<figcaption><strong>3. New connection</strong></figcaption>
+</figure>
+<figure class="repair-step">
+<img alt="Finished repaired bedpost reassembled and back in service" loading="lazy" src="assets/repair-finished-bed.jpg"/>
+<figcaption><strong>4. Finished repair</strong></figcaption>
+</figure>
 </div>
 <div class="case-body">
 <div class="project-kicker">Furniture repair · structural rebuild</div>
-<h3>Broken furniture leg rebuilt and reattached</h3>
-<p>The original wood around the connection had failed. I removed the damaged material, rebuilt the attachment point, added a new threaded connection, and reinstalled the leg so the piece could be used again.</p>
+<h3>Broken bedpost joint rebuilt and reattached</h3>
+<p>The original wood around the bedpost connection had failed. I removed the weakened material, rebuilt the attachment point with solid wood, trimmed and prepared the new surface, added a threaded connection, and reassembled the bed.</p>
 </div>
 </article>
 <article class="card project-card">
@@ -851,6 +883,23 @@
 <div class="project-kicker">Bedroom furniture</div>
 <h3>Platform bed and wall-mounted headboard</h3>
 <p>Assembled the bed frame and mounted the matching headboard panels to the wall.</p>
+</div>
+</article>
+
+<article class="card project-card">
+<img alt="Framed white textured artwork aligned beneath a picture light" loading="lazy" src="assets/artwork-picture-light.jpg"/>
+<div class="project-body">
+<div class="project-kicker">Light mounting · finishing touches</div>
+<h3>Artwork placement</h3>
+<p>Mounted both the framed artwork and picture light, then aligned them together for a clean finished presentation.</p>
+</div>
+</article>
+<article class="card project-card wide">
+<img alt="Large white multi-section shelving and cabinet storage wall assembled in a home" loading="lazy" src="assets/large-storage-wall.jpg"/>
+<div class="project-body">
+<div class="project-kicker">Large furniture assembly</div>
+<h3>Full-wall storage system</h3>
+<p>Assembled and aligned a large multi-section shelving and cabinet system into one finished storage wall.</p>
 </div>
 </article>
 <article class="card project-card">
