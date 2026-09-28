@@ -3,1482 +3,849 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anderson Home Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <title>Anderson Home Services | Furniture Assembly & Move-In Setup</title>
+  <meta name="description" content="Furniture assembly, move-in setup, hauling, and practical home help in Arlington and the DC metro area." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --cream: #faf7f2;
-      --warm-white: #ffffff;
-      --brown: #5c3d2e;
-      --brown-light: #7a5544;
-      --amber: #c8813a;
-      --amber-light: #e0a45e;
-      --text-dark: #2b1d12;
-      --text-mid: #5a4233;
-      --text-light: #8a7060;
-      --border: #e8ddd4;
-      --shadow: rgba(92, 61, 46, 0.1);
-      --shadow-md: rgba(92, 61, 46, 0.18);
+      --night: #1a120d;
+      --coffee: #241811;
+      --walnut: #3a2619;
+      --cedar: #553923;
+      --bark: #725033;
+      --copper: #b97736;
+      --copper-light: #d69a56;
+      --ember: #f0b768;
+      --paper: #f3eadc;
+      --paper-deep: #e8d8bf;
+      --cream: #fff7ea;
+      --ink: #25180f;
+      --muted: #77604c;
+      --soft: #b99f82;
+      --line: rgba(255, 236, 204, 0.18);
+      --line-dark: rgba(58, 38, 25, 0.18);
+      --shadow: 0 16px 42px rgba(0,0,0,.28);
+      --shadow-soft: 0 7px 24px rgba(42, 25, 15, .14);
+      --radius: 10px;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Lato', sans-serif;
-      background: var(--cream);
-      color: var(--text-dark);
+      font-family: 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--paper);
+      background:
+        radial-gradient(circle at top left, rgba(185,119,54,.22), transparent 32rem),
+        linear-gradient(180deg, #1a120d 0%, #241811 40%, #1a120d 100%);
+      line-height: 1.55;
       font-size: 16px;
-      line-height: 1.7;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      line-height: 1.25;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .08;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,.6) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(255,255,255,.45) 1px, transparent 1px);
+      background-size: 38px 38px, 53px 53px;
+      mix-blend-mode: screen;
+      z-index: 0;
     }
 
     a { color: inherit; text-decoration: none; }
-
     img { max-width: 100%; display: block; }
+    p { color: inherit; }
+    h1, h2, h3, h4 { font-family: 'Libre Baskerville', Georgia, serif; line-height: 1.16; }
 
-    /* ── NAV ── */
+    .site-shell { position: relative; z-index: 1; }
+
+    .top-strip {
+      background: #120c08;
+      border-bottom: 1px solid var(--line);
+      color: var(--soft);
+      font-size: .86rem;
+    }
+    .top-strip-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .top-strip strong { color: var(--ember); }
+    .top-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .top-links a { color: var(--paper-deep); font-weight: 700; }
+    .top-links a:hover { color: var(--ember); }
+
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--warm-white);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 2px 12px var(--shadow);
+      background: rgba(31, 21, 14, .96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 6px 24px rgba(0,0,0,.25);
     }
-
     .nav-inner {
-      max-width: 1100px;
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 0 24px;
-      height: 68px;
+      min-height: 74px;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
-
-    .nav-logo {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--brown);
+      gap: 12px;
+      min-width: 260px;
     }
-
-    .nav-logo img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text-mid);
-      transition: color 0.2s, background 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--brown);
-      background: var(--cream);
-    }
-
-    .nav-book {
-      background: var(--amber) !important;
-      color: var(--warm-white) !important;
-      border-radius: 8px !important;
-      padding: 8px 18px !important;
-      font-weight: 700 !important;
-      transition: background 0.2s !important;
-    }
-
-    .nav-book:hover { background: var(--brown) !important; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--brown);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: var(--warm-white);
-      border-top: 1px solid var(--border);
-      padding: 16px 24px 24px;
-      gap: 4px;
-    }
-
-    .mobile-menu a {
-      padding: 10px 12px;
-      border-radius: 8px;
-      font-weight: 700;
-      color: var(--text-mid);
-      font-size: 1rem;
-    }
-
-    .mobile-menu a:hover { background: var(--cream); color: var(--brown); }
-
-    .mobile-menu .nav-book {
-      background: var(--amber) !important;
-      color: white !important;
-      text-align: center;
-      margin-top: 8px;
-    }
-
-    .mobile-menu.open { display: flex; }
-
-    /* ── PAGE SECTIONS ── */
-    .page { display: none; }
-    .page.active { display: block; }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, var(--brown) 0%, var(--brown-light) 60%, var(--amber) 100%);
-      color: white;
-      padding: 80px 24px 72px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .hero-inner {
-      position: relative;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      font-weight: 300;
-      margin-bottom: 36px;
-      opacity: 0.92;
-      max-width: 560px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-family: 'Lato', sans-serif;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--warm-white);
-      color: var(--brown);
-    }
-
-    .btn-primary:hover { background: var(--cream); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 2px solid rgba(255,255,255,0.6);
-    }
-
-    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 72px 24px;
-    }
-
-    .section-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      color: var(--brown);
-      margin-bottom: 16px;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      max-width: 600px;
-      margin-bottom: 48px;
-    }
-
-    /* ── ABOUT ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-img {
-      width: 100%;
-      aspect-ratio: 1;
-      border-radius: 20px;
-      object-fit: cover;
-      box-shadow: 0 8px 32px var(--shadow-md);
-    }
-
-    .about-text p {
-      color: var(--text-mid);
-      margin-bottom: 16px;
-    }
-
-    .stat-row {
-      display: flex;
-      gap: 32px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      text-align: left;
-    }
-
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--amber);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-    }
-
-    /* ── WHY ME ── */
-    .why-section { background: var(--warm-white); }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 28px;
-    }
-
-    .why-card {
-      background: var(--cream);
-      border-radius: 16px;
-      padding: 28px 24px;
-      border: 1px solid var(--border);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .why-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow); }
-
-    .why-icon {
-      font-size: 2rem;
-      margin-bottom: 14px;
-    }
-
-    .why-card h3 {
-      font-size: 1.05rem;
-      color: var(--brown);
-      margin-bottom: 8px;
-    }
-
-    .why-card p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    /* ── SERVICES ── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      background: var(--warm-white);
-      border-radius: 16px;
-      padding: 28px 26px;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 12px var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow-md); }
-
-    .service-icon { font-size: 1.8rem; margin-bottom: 12px; }
-
-    .service-card h3 {
-      font-size: 1.1rem;
-      color: var(--brown);
-      margin-bottom: 8px;
-    }
-
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.65;
-    }
-
-    .featured-card {
-      background: linear-gradient(135deg, var(--brown) 0%, var(--brown-light) 100%);
-      color: white;
-      grid-column: 1 / -1;
-    }
-
-    .featured-card h3 { color: white; font-size: 1.3rem; }
-    .featured-card p { color: rgba(255,255,255,0.82); }
-    .featured-card .service-icon { font-size: 2.2rem; }
-
-    .featured-badge {
-      display: inline-block;
-      background: var(--amber);
-      color: white;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-    }
-
-    /* ── PRICING ── */
-    .pricing-section { background: var(--warm-white); }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-
-    .pricing-card {
-      border-radius: 16px;
-      padding: 32px 28px;
-      border: 1px solid var(--border);
-      background: var(--cream);
-    }
-
-    .pricing-card.featured-pricing {
-      background: var(--brown);
-      color: white;
-      border-color: var(--brown);
-    }
-
-    .pricing-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 6px;
-      color: var(--brown);
-    }
-
-    .pricing-card.featured-pricing h3 { color: white; }
-
-    .price-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--amber);
-      line-height: 1;
-      margin: 10px 0 4px;
-    }
-
-    .pricing-card.featured-pricing .price-num { color: var(--amber-light); }
-
-    .price-sub {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin-bottom: 18px;
-    }
-
-    .pricing-card.featured-pricing .price-sub { color: rgba(255,255,255,0.65); }
-
-    .pricing-detail {
-      font-size: 0.88rem;
-      color: var(--text-mid);
-      line-height: 1.65;
-    }
-
-    .pricing-card.featured-pricing .pricing-detail { color: rgba(255,255,255,0.8); }
-
-    .pricing-notes {
-      background: var(--cream);
-      border-radius: 12px;
-      padding: 24px 28px;
-      border: 1px solid var(--border);
-    }
-
-    .pricing-notes h4 {
-      color: var(--brown);
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-
-    .pricing-notes ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .pricing-notes li {
-      font-size: 0.88rem;
-      color: var(--text-mid);
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .pricing-notes li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--amber);
-      font-weight: 700;
-    }
-
-    /* ── HOW TO BOOK ── */
-    .booking-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-
-    .step {
-      text-align: center;
-      padding: 28px 20px;
-      background: var(--warm-white);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-    }
-
-    .step-num {
+    .brand img {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: var(--amber);
-      color: white;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
+      border: 2px solid rgba(240,183,104,.45);
+      box-shadow: 0 0 0 4px rgba(185,119,54,.12);
+      object-fit: cover;
+    }
+    .brand-name {
+      font-family: 'Libre Baskerville', Georgia, serif;
       font-weight: 700;
+      font-size: 1.06rem;
+      letter-spacing: .01em;
+      color: var(--cream);
+    }
+    .brand-tag {
+      color: var(--soft);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .nav-links {
+      list-style: none;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
+      gap: 4px;
     }
-
-    .step h3 { font-size: 1rem; color: var(--brown); margin-bottom: 8px; }
-    .step p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
-
-    .booking-note {
-      background: var(--cream);
-      border-left: 4px solid var(--amber);
-      border-radius: 0 12px 12px 0;
-      padding: 20px 24px;
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      margin-bottom: 32px;
+    .nav-links a {
+      color: var(--paper-deep);
+      padding: 9px 11px;
+      border-radius: 7px;
+      font-size: .93rem;
+      font-weight: 700;
     }
-
-    .cta-center { text-align: center; }
-
-    .btn-amber {
-      background: var(--amber);
-      color: white;
-      font-size: 1.05rem;
-      padding: 16px 36px;
+    .nav-links a:hover { background: rgba(255,255,255,.07); color: var(--ember); }
+    .nav-book {
+      margin-left: 4px;
+      background: linear-gradient(180deg, var(--copper-light), var(--copper));
+      color: #1c1109 !important;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 5px 16px rgba(185,119,54,.26);
     }
+    .nav-book:hover { background: var(--ember) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .hamburger span { width: 25px; height: 2px; background: var(--paper); border-radius: 2px; }
+    .mobile-menu { display: none; background: var(--coffee); border-top: 1px solid var(--line); padding: 12px 20px 20px; }
+    .mobile-menu.open { display: grid; gap: 6px; }
+    .mobile-menu a { padding: 11px 12px; border-radius: 8px; font-weight: 800; color: var(--paper-deep); }
+    .mobile-menu a:hover { background: rgba(255,255,255,.07); }
+    .mobile-menu .nav-book { text-align: center; color: #1c1109 !important; }
 
-    .btn-amber:hover { background: var(--brown); transform: translateY(-2px); box-shadow: 0 6px 20px var(--shadow-md); }
+    .page { display: none; }
+    .page.active { display: block; }
 
-    /* ── REVIEWS ── */
-    .reviews-section { background: var(--warm-white); }
-
-    .reviews-grid {
+    .hero {
+      position: relative;
+      min-height: 620px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-
-    .review-card {
-      background: var(--cream);
-      border-radius: 16px;
-      padding: 28px 26px;
-      border: 1px solid var(--border);
-    }
-
-    .stars {
-      color: var(--amber);
-      font-size: 1rem;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-
-    .review-text {
-      font-size: 0.92rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 18px;
-      font-style: italic;
-    }
-
-    .reviewer {
-      display: flex;
       align-items: center;
-      gap: 12px;
-    }
-
-    .reviewer-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--brown);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .reviewer-name {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--brown);
-    }
-
-    .reviewer-meta {
-      font-size: 0.78rem;
-      color: var(--text-light);
-    }
-
-    .taskrabbit-note {
-      text-align: center;
-      font-size: 0.88rem;
-      color: var(--text-light);
-      margin-top: 8px;
-    }
-
-    .taskrabbit-note a { color: var(--amber); font-weight: 700; }
-    .taskrabbit-note a:hover { color: var(--brown); }
-
-    /* ── FAQs ── */
-    .faqs-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .faq-item {
-      background: var(--warm-white);
-      border-radius: 12px;
-      border: 1px solid var(--border);
+      padding: 58px 20px;
+      border-bottom: 1px solid var(--line);
       overflow: hidden;
     }
-
-    .faq-q {
-      padding: 20px 24px;
-      font-weight: 700;
-      color: var(--brown);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.95rem;
-      user-select: none;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(26,18,13,.94) 0%, rgba(26,18,13,.86) 48%, rgba(26,18,13,.47) 100%),
+        url('https://static.wixstatic.com/media/16c886_c6de0a471cd041048e758816adbc0599~mv2.png/v1/fill/w_900,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ChatGPT%20Image%20Apr%2023%2C%202026%2C%2001_19_15%20AM.png');
+      background-size: cover;
+      background-position: center right;
+      opacity: .78;
+      z-index: -2;
     }
-
-    .faq-q:hover { background: var(--cream); }
-
-    .faq-arrow {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--amber);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      transition: transform 0.25s;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 180px;
+      background: linear-gradient(transparent, var(--coffee));
+      z-index: -1;
     }
-
-    .faq-item.open .faq-arrow { transform: rotate(180deg); }
-
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    .faq-item.open .faq-a {
-      max-height: 400px;
-      padding: 0 24px 22px;
-    }
-
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .contact-info h3 {
-      font-size: 1.1rem;
-      color: var(--brown);
-      margin-bottom: 20px;
-    }
-
-    .contact-method {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .contact-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .contact-method-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-light);
-      margin-bottom: 2px;
-    }
-
-    .contact-method-val {
-      font-size: 0.95rem;
-      color: var(--text-dark);
-      font-weight: 700;
-    }
-
-    .contact-method-val a { color: var(--amber); }
-    .contact-method-val a:hover { color: var(--brown); }
-
-    .contact-form {
-      background: var(--warm-white);
-      border-radius: 20px;
-      padding: 36px 32px;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 20px var(--shadow);
-    }
-
-    .contact-form h3 {
-      font-size: 1.3rem;
-      color: var(--brown);
-      margin-bottom: 24px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-mid);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--cream);
-      font-family: 'Lato', sans-serif;
-      font-size: 0.95rem;
-      color: var(--text-dark);
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+    .hero-inner {
       width: 100%;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--amber);
-      box-shadow: 0 0 0 3px rgba(200, 129, 58, 0.12);
-    }
-
-    .form-group textarea { resize: vertical; min-height: 110px; }
-
-    .form-submit {
-      width: 100%;
-      padding: 14px;
-      background: var(--amber);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-family: 'Lato', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      margin-top: 8px;
-    }
-
-    .form-submit:hover { background: var(--brown); transform: translateY(-1px); }
-
-    .form-note {
-      font-size: 0.78rem;
-      color: var(--text-light);
-      text-align: center;
-      margin-top: 12px;
-    }
-
-    /* ── PORTFOLIO ── */
-    .portfolio-placeholder {
-      background: var(--warm-white);
-      border: 2px dashed var(--border);
-      border-radius: 16px;
-      padding: 60px 32px;
-      text-align: center;
-    }
-
-    .portfolio-placeholder p {
-      color: var(--text-light);
-      margin-top: 12px;
-      font-size: 0.95rem;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--brown);
-      color: rgba(255,255,255,0.75);
-      padding: 48px 24px 32px;
-    }
-
-    .footer-inner {
-      max-width: 1000px;
+      max-width: var(--max);
       margin: 0 auto;
-    }
-
-    .footer-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: minmax(0, 680px) 1fr;
       gap: 40px;
-      margin-bottom: 40px;
+      align-items: center;
     }
-
-    .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: white;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .footer-tagline {
-      font-size: 0.88rem;
-      line-height: 1.6;
-    }
-
-    .footer-col h4 {
-      font-family: 'Playfair Display', serif;
-      color: white;
-      font-size: 0.95rem;
+    .eyebrow {
+      color: var(--ember);
+      font-size: .83rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .15em;
       margin-bottom: 14px;
     }
-
-    .footer-col a {
-      display: block;
-      font-size: 0.88rem;
-      margin-bottom: 8px;
-      color: rgba(255,255,255,0.65);
-      transition: color 0.2s;
+    .hero h1 {
+      font-size: clamp(2.25rem, 5vw, 4.55rem);
+      max-width: 720px;
+      color: var(--cream);
+      text-shadow: 0 3px 14px rgba(0,0,0,.35);
+      letter-spacing: -.035em;
     }
-
-    .footer-col a:hover { color: var(--amber-light); }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 24px;
+    .hero-lede {
+      margin-top: 18px;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--paper-deep);
+      max-width: 610px;
+    }
+    .trust-row {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.82rem;
+      gap: 9px;
+      margin: 24px 0 30px;
+    }
+    .trust-pill {
+      border: 1px solid rgba(240,183,104,.28);
+      background: rgba(255,247,234,.08);
+      color: var(--paper);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .88rem;
+    }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-weight: 900;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform .15s ease, background .15s ease, color .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--ember); color: #1d120a; border-color: rgba(255,255,255,.22); }
+    .btn-primary:hover { background: #ffd08a; }
+    .btn-outline { background: rgba(255,255,255,.06); color: var(--cream); border-color: rgba(255,255,255,.24); }
+    .btn-outline:hover { background: rgba(255,255,255,.12); }
+    .hero-note {
+      margin-top: 18px;
+      color: var(--soft);
+      font-size: .92rem;
+      max-width: 520px;
+    }
+    .hero-card {
+      align-self: end;
+      background: rgba(243,234,220,.94);
+      color: var(--ink);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.38);
+      padding: 22px;
+      max-width: 360px;
+      justify-self: end;
+    }
+    .hero-card h3 { color: var(--walnut); font-size: 1.08rem; margin-bottom: 10px; }
+    .hero-card ul { list-style: none; display: grid; gap: 8px; }
+    .hero-card li { color: var(--muted); font-weight: 700; padding-left: 22px; position: relative; }
+    .hero-card li::before { content: "✓"; position: absolute; left: 0; color: var(--copper); font-weight: 900; }
+
+    section { padding: 58px 20px; }
+    .section-inner { max-width: var(--max); margin: 0 auto; }
+    .section-head { margin-bottom: 30px; max-width: 760px; }
+    .section-label {
+      font-size: .8rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      color: var(--cream);
+      letter-spacing: -.018em;
+    }
+    .section-subtitle {
+      margin-top: 12px;
+      color: var(--paper-deep);
+      max-width: 680px;
+      font-size: 1.04rem;
+    }
+    .paper-section {
+      background: var(--paper);
+      color: var(--ink);
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .paper-section .section-title { color: var(--walnut); }
+    .paper-section .section-subtitle { color: var(--muted); }
+    .paper-section .section-label { color: var(--copper); }
+
+    .split {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .logo-frame {
+      background: #1d130d;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+    .logo-frame img { border-radius: 10px; }
+    .copy-card {
+      background: rgba(255,247,234,.055);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .copy-card p { color: var(--paper-deep); margin-bottom: 13px; }
+    .copy-card p:last-child { margin-bottom: 0; }
+    .paper-section .copy-card { background: var(--cream); border-color: var(--line-dark); }
+    .paper-section .copy-card p { color: var(--muted); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .stat {
+      background: rgba(255,247,234,.08);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .stat-num { font-family: 'Libre Baskerville', Georgia, serif; color: var(--ember); font-size: 1.8rem; font-weight: 700; }
+    .stat-label { color: var(--soft); font-weight: 900; text-transform: uppercase; letter-spacing: .08em; font-size: .76rem; }
+    .paper-section .stat { background: var(--paper-deep); border-color: var(--line-dark); }
+    .paper-section .stat-label { color: var(--muted); }
+
+    .feature-grid,
+    .service-grid,
+    .reviews-grid,
+    .pricing-grid,
+    .steps-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .feature-grid { grid-template-columns: repeat(3, 1fr); }
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    .steps-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      border-radius: 12px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,247,234,.075);
+      box-shadow: 0 8px 26px rgba(0,0,0,.12);
+    }
+    .paper-section .card {
+      background: var(--cream);
+      border-color: var(--line-dark);
+      box-shadow: var(--shadow-soft);
+    }
+    .card h3 { color: var(--cream); font-size: 1.08rem; margin-bottom: 9px; }
+    .paper-section .card h3 { color: var(--walnut); }
+    .card p { color: var(--paper-deep); font-size: .96rem; }
+    .paper-section .card p { color: var(--muted); }
+    .icon { font-size: 1.55rem; margin-bottom: 10px; }
+    .card.featured {
+      background: linear-gradient(145deg, var(--walnut), var(--cedar));
+      border-color: rgba(240,183,104,.32);
+      color: var(--paper);
+      grid-column: span 2;
+    }
+    .paper-section .card.featured h3,
+    .card.featured h3 { color: var(--cream); }
+    .paper-section .card.featured p,
+    .card.featured p { color: var(--paper-deep); }
+    .badge {
+      display: inline-block;
+      background: rgba(240,183,104,.18);
+      color: var(--ember);
+      border: 1px solid rgba(240,183,104,.28);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: .73rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 900;
+      margin-bottom: 11px;
     }
 
-    .footer-legal { display: flex; gap: 20px; }
-    .footer-legal a { color: rgba(255,255,255,0.5); }
-    .footer-legal a:hover { color: var(--amber-light); }
-
-    .disclaimer {
-      font-size: 0.76rem;
-      color: rgba(255,255,255,0.4);
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+    .quote-panel {
+      background: #17100b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 34px 20px;
+    }
+    .quote-panel-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      align-items: center;
+    }
+    .quote-text {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      color: var(--cream);
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      line-height: 1.28;
+    }
+    .quote-aside {
+      color: var(--soft);
+      border-left: 3px solid var(--copper);
+      padding-left: 18px;
+      font-weight: 600;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
+    .price-num {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      color: var(--copper);
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin: 8px 0 3px;
+    }
+    .price-sub { color: var(--muted); font-weight: 800; font-size: .88rem; margin-bottom: 12px; }
+    .pricing-note {
+      margin-top: 18px;
+      background: var(--cream);
+      border: 1px solid var(--line-dark);
+      border-left: 5px solid var(--copper);
+      border-radius: 8px;
+      padding: 20px 22px;
+    }
+    .pricing-note h4 { color: var(--walnut); margin-bottom: 10px; }
+    .pricing-note ul { list-style: none; display: grid; gap: 7px; }
+    .pricing-note li { position: relative; padding-left: 22px; color: var(--muted); }
+    .pricing-note li::before { content: "•"; position: absolute; left: 5px; color: var(--copper); font-weight: 900; }
+
+    .review-card .stars { color: var(--copper); letter-spacing: 2px; margin-bottom: 9px; font-weight: 900; }
+    .review-text { font-style: italic; }
+    .reviewer { margin-top: 14px; font-weight: 900; color: var(--walnut); }
+    .reviewer span { display: block; color: var(--muted); font-size: .84rem; font-weight: 700; }
+
+    .faq-list { display: grid; gap: 10px; }
+    .faq-item { background: var(--cream); color: var(--ink); border: 1px solid var(--line-dark); border-radius: 10px; overflow: hidden; }
+    .faq-q { padding: 17px 20px; font-weight: 900; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .faq-q:hover { background: var(--paper-deep); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .25s ease, padding .25s ease; color: var(--muted); }
+    .faq-item.open .faq-a { max-height: 420px; padding: 0 20px 18px; }
+    .faq-arrow { color: var(--copper); }
+
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px; align-items: start; }
+    .contact-method { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; margin-bottom: 16px; }
+    .contact-icon { width: 40px; height: 40px; border-radius: 8px; display: grid; place-items: center; background: var(--paper-deep); border: 1px solid var(--line-dark); }
+    .contact-label { text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; color: var(--muted); font-weight: 900; }
+    .contact-value { color: var(--walnut); font-weight: 900; }
+    .contact-value a { color: var(--copper); }
+
+    .contact-form { background: var(--cream); border: 1px solid var(--line-dark); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-soft); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: grid; gap: 6px; margin-bottom: 12px; }
+    label { color: var(--walnut); font-weight: 900; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    input, select, textarea {
+      width: 100%;
+      font: inherit;
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid rgba(58,38,25,.25);
+      border-radius: 8px;
+      padding: 11px 12px;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--copper); box-shadow: 0 0 0 3px rgba(185,119,54,.16); }
+    textarea { min-height: 118px; resize: vertical; }
+    .form-submit { width: 100%; border: 0; background: var(--copper); color: #1d120a; padding: 13px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; }
+    .form-submit:hover { background: var(--ember); }
+    .form-note { margin-top: 10px; color: var(--muted); text-align: center; font-size: .86rem; }
+
+    footer { background: #100a06; border-top: 1px solid var(--line); padding: 40px 20px 28px; color: var(--soft); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 28px; margin-bottom: 28px; }
+    .footer-brand { color: var(--cream); font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; margin-bottom: 9px; }
+    .footer-col h4 { color: var(--cream); font-size: .96rem; margin-bottom: 10px; }
+    .footer-col a { display: block; color: var(--paper-deep); margin-bottom: 7px; font-weight: 700; }
+    .footer-col a:hover { color: var(--ember); }
+    .footer-bottom { border-top: 1px solid var(--line); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .86rem; }
+    .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+    .disclaimer { margin-top: 14px; font-size: .78rem; color: rgba(255,247,234,.43); }
+
+    @media (max-width: 900px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
-
-      section { padding: 52px 20px; }
-
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .about-img { max-width: 280px; margin: 0 auto; }
-
-      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-      .form-row { grid-template-columns: 1fr; }
-
-      .footer-top { grid-template-columns: 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-
-      .featured-card { grid-column: auto; }
+      .hero { min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { justify-self: start; max-width: 100%; }
+      .split, .quote-panel-inner, .contact-grid { grid-template-columns: 1fr; }
+      .feature-grid, .service-grid, .reviews-grid, .pricing-grid, .steps-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 480px) {
-      .hero { padding: 56px 20px 52px; }
-      .stat-row { gap: 20px; }
-      .contact-form { padding: 24px 20px; }
+    @media (max-width: 620px) {
+      .top-strip-inner { align-items: flex-start; }
+      .brand { min-width: 0; }
+      .brand-name { font-size: .98rem; }
+      .brand-tag { display: none; }
+      .hero { padding: 44px 18px; }
+      section { padding: 44px 18px; }
+      .feature-grid, .service-grid, .reviews-grid, .pricing-grid, .steps-grid, .stats { grid-template-columns: 1fr; }
+      .card.featured { grid-column: auto; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-cta .btn { width: 100%; }
+      .footer-bottom { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo" onclick="showPage('home')">
-      <img src="https://static.wixstatic.com/media/16c886_c6de0a471cd041048e758816adbc0599~mv2.png/v1/fill/w_92,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ChatGPT%20Image%20Apr%2023%2C%202026%2C%2001_19_15%20AM.png" alt="Anderson Home Services" />
-      Anderson Home Services
-    </a>
-    <ul class="nav-links">
-      <li><a href="#" onclick="showPage('home')">Home</a></li>
-      <li><a href="#" onclick="showPage('services')">Services</a></li>
-      <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
-      <li><a href="#" onclick="showPage('faqs')">FAQs</a></li>
-      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-      <li><a href="https://zcal.co/caleb1223" target="_blank" class="nav-book">Book Here</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#" onclick="showPage('home'); closeMenu()">Home</a>
-    <a href="#" onclick="showPage('services'); closeMenu()">Services</a>
-    <a href="#" onclick="showPage('portfolio'); closeMenu()">Portfolio</a>
-    <a href="#" onclick="showPage('faqs'); closeMenu()">FAQs</a>
-    <a href="#" onclick="showPage('contact'); closeMenu()">Contact</a>
-    <a href="https://zcal.co/caleb1223" target="_blank" class="nav-book">Book Here</a>
-  </div>
-</nav>
-
-<!-- ═══════════════ HOME ═══════════════ -->
-<div class="page active" id="page-home">
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
-      <h1>Your New Home, Ready to Live In</h1>
-      <p>Furniture assembly, move-in setup, and hauling — serving the DC metro area. From a single nightstand to a full home furnishing, same-day ready.</p>
-      <div class="hero-cta">
-        <a href="https://zcal.co/caleb1223" target="_blank" class="btn btn-primary">Book an Appointment</a>
-        <a href="#" class="btn btn-outline" onclick="showPage('services')">View Services</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section>
-    <div class="section-inner">
-      <div class="about-grid">
-        <div>
-          <img
-            src="https://static.wixstatic.com/media/16c886_c6de0a471cd041048e758816adbc0599~mv2.png/v1/fill/w_406,h_406,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ChatGPT%20Image%20Apr%2023%2C%202026%2C%2001_19_15%20AM.png"
-            alt="Caleb Anderson"
-            class="about-img"
-          />
-        </div>
-        <div class="about-text">
-          <div class="section-label">About Me</div>
-          <h2 class="section-title">Hi, I'm Caleb</h2>
-          <p>Since 2022 I've assembled over 2,000 items — from small nightstands to full IKEA wardrobe systems and garden sheds. My specialty is move-in day: turning a blank apartment full of delivery boxes into a home you're actually ready to live in, same day.</p>
-          <p>I offer furniture assembly, moving help, hauling, and light IT setup (WiFi, TV, etc.). Whether you need one item or a full home furnished, I can help — and I bring the flexibility to match whatever your move-in day throws at us.</p>
-          <div class="stat-row">
-            <div class="stat">
-              <div class="stat-num">2,000+</div>
-              <div class="stat-label">Items Assembled</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">3+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">$1M</div>
-              <div class="stat-label">Insured</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY ME -->
-  <section class="why-section">
-    <div class="section-inner">
-      <div class="section-label">Why Anderson Home Services</div>
-      <h2 class="section-title">What Sets Me Apart</h2>
-      <p class="section-subtitle">You've got enough to manage on move-in day. Here's why clients keep coming back.</p>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">🛡️</div>
-          <h3>Fully Insured</h3>
-          <p>I carry $1 million in business liability coverage. You can view my live certificate anytime — no guessing whether you're protected.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">💬</div>
-          <h3>Transparent Pricing</h3>
-          <p>$60/hr, no hidden fees. I'll tell you upfront if any expensing applies. Handshake quotes available — I eat the overrun if I'm slow.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">⚡</div>
-          <h3>Same-Day Ready</h3>
-          <p>The goal is always to leave you with a fully livable home by end of day. Not a pile of half-assembled furniture to deal with tomorrow.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🔧</div>
-          <h3>Fix Guarantee</h3>
-          <p>On repairs, if I can't fix it you pay $0. I'll also diagnose issues remotely for free before you commit to a booking.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🌙</div>
-          <h3>Night Owl Discount</h3>
-          <p>Book a start time at 8pm or later and save $10/hr. A great option if you need flexibility or want to avoid peak hours.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">📦</div>
-          <h3>All Brands Welcome</h3>
-          <p>IKEA, Wayfair, West Elm, Williams-Sonoma, Walmart, Target and more. If it comes in a box, I've probably seen it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section>
-    <div class="section-inner">
-      <div class="section-label">Reviews</div>
-      <h2 class="section-title">What Clients Say</h2>
-      <p class="section-subtitle">All reviews sourced from TaskRabbit. New clients welcome to verify there.</p>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">"Caleb assembled my entire IKEA bedroom set in a few hours. He was efficient, friendly, and left zero mess. I'd absolutely hire him again for my next move."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">S</div>
-            <div>
-              <div class="reviewer-name">Sarah M.</div>
-              <div class="reviewer-meta">Arlington, VA · TaskRabbit</div>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">"Moved cross-country and had a whole apartment to furnish from scratch. Caleb did it all in one day. Absolutely worth the full-day rate — I was sleeping in a real bed that night."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">J</div>
-            <div>
-              <div class="reviewer-name">James T.</div>
-              <div class="reviewer-meta">Crystal City, VA · TaskRabbit</div>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">"Super communicative, on time, and got through a complicated wardrobe system I was dreading. Pricing is very fair and he was upfront about everything."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">A</div>
-            <div>
-              <div class="reviewer-name">Anika R.</div>
-              <div class="reviewer-meta">Rosslyn, VA · TaskRabbit</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="taskrabbit-note">⭐ More reviews available on <a href="https://www.taskrabbit.com" target="_blank">TaskRabbit</a> — also an option for booking.</p>
-    </div>
-  </section>
-
-  <!-- BOOK CTA -->
-  <section class="why-section">
-    <div class="section-inner" style="text-align:center;">
-      <div class="section-label">Ready to Get Started?</div>
-      <h2 class="section-title" style="margin-bottom:16px;">Let's Get Your Home Set Up</h2>
-      <p style="color:var(--text-light); margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto;">Reach out with your project details and I'll get back to you with a time estimate and availability. Or book directly if you already have a time in mind.</p>
-      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="https://zcal.co/caleb1223" target="_blank" class="btn btn-amber">Book an Appointment</a>
-        <a href="#" class="btn" style="background:var(--cream); color:var(--brown); border:1px solid var(--border);" onclick="showPage('contact')">Send a Message</a>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- ═══════════════ SERVICES ═══════════════ -->
-<div class="page" id="page-services">
-  <section>
-    <div class="section-inner">
-      <div class="section-label">What I Offer</div>
-      <h2 class="section-title">Services</h2>
-      <p class="section-subtitle">Furniture assembly is my core focus, but I can handle the full move-in day from start to finish.</p>
-      <div class="services-grid">
-        <div class="service-card featured-card">
-          <div class="featured-badge">Most Popular</div>
-          <div class="service-icon">📦</div>
-          <h3>Full Day Package — $650 Flat Rate</h3>
-          <p>Need to go from an empty apartment to a livable home in one day? This is your best option. Available from ~10am to as late as ~1am, all expensing (dump fees, etc.) waived. Perfect for big move-ins or anyone who wants a guaranteed rate with no surprises. Requires 50% deposit.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔩</div>
-          <h3>Furniture Assembly</h3>
-          <p>My bread and butter. IKEA, Wayfair, West Elm, Williams-Sonoma, Walmart, Target, and more. Small items to full wardrobe systems.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔨</div>
-          <h3>Furniture Repair</h3>
-          <p>Wobbly cabinet doors, stuck dresser drawers, loose joints. If I can't fix it, you pay $0. Remote diagnosis is always free.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🚚</div>
-          <h3>Moving Help</h3>
-          <p>I can assist with DIY-level moves using two dollies. I can also rent and drive a UHaul on request. Great for moves where you need an extra set of hands but not a full crew.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔄</div>
-          <h3>Disassembly & Reassembly</h3>
-          <p>Moving in or out, or bought a piece on Facebook Marketplace? I can disassemble, transport, and reassemble furniture.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🚐</div>
-          <h3>Hauling</h3>
-          <p>My vehicle is a 2003 Chevy Suburban. I can haul furniture, cardboard, and project trash. Can't haul hazardous or specialty items.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🛠️</div>
-          <h3>Other Projects</h3>
-          <p>Light mounting, basic IT/computer setup, yard work, and more. Some limitations apply — if unsure, just ask. I'll tell you honestly if it's outside my skillset and try to point you to someone who can help.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing-section">
-    <div class="section-inner">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">Clear, Upfront Rates</h2>
-      <p class="section-subtitle">No hidden fees, no surprises. If any expensing applies I'll always tell you before confirming.</p>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Hourly Rate</h3>
-          <div class="price-num">$60</div>
-          <div class="price-sub">per hour · 1hr minimum · 15min increments after</div>
-          <div class="pricing-detail">Best for standard jobs. You only pay for the time used. You can stop at any point and I'll only invoice up to that moment.</div>
-        </div>
-        <div class="pricing-card featured-pricing">
-          <h3>Full Day Package</h3>
-          <div class="price-num">$650</div>
-          <div class="price-sub">flat rate · ~10am to ~1am · all expensing waived</div>
-          <div class="pricing-detail">Best for big move-ins or multi-room furnishing. One guaranteed rate regardless of how long it takes. Requires 50% deposit.</div>
-        </div>
-        <div class="pricing-card">
-          <h3>Handshake Quote</h3>
-          <div class="price-num">Fixed</div>
-          <div class="price-sub">quoted upfront · guaranteed price</div>
-          <div class="pricing-detail">I estimate the time and give you a guaranteed price. If the job takes longer, I eat the overrun. Requires assembly instructions to be available for review.</div>
-        </div>
-      </div>
-      <div class="pricing-notes">
-        <h4>A Few More Things Worth Knowing</h4>
-        <ul>
-          <li>🌙 <strong>Night Owl Discount:</strong> $10/hr off any booking starting at 8pm or later</li>
-          <li>Expensing (dump fees, parts, etc.) applies to hourly and handshake jobs, but NOT the Full Day Package</li>
-          <li>You're never obligated to work longer than planned — stop whenever you want, pay only up to that point</li>
-          <li>Deposits may be required for larger jobs to hold schedule; deposits count toward your final price</li>
-          <li>Travel beyond the DMV area may include a larger hourly minimum or deposit</li>
-          <li>Booking on TaskRabbit is also an option — note that TaskRabbit's own fees and policies apply</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW TO BOOK -->
-  <section>
-    <div class="section-inner">
-      <div class="section-label">Getting Started</div>
-      <h2 class="section-title">How to Book</h2>
-      <p class="section-subtitle">The process is quick. Most bookings are confirmed same day.</p>
-      <div class="booking-steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Reach Out</h3>
-          <p>Contact me by text, WhatsApp, or email. Describe the job and include links or screenshots of items to be assembled if possible — this helps me estimate time.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Get an Estimate</h3>
-          <p>I'll give you a time estimate and available slots. Use that to select a time on my booking calendar at zcal.co/caleb1223.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>You're Confirmed</h3>
-          <p>That's it! If you need to reschedule, add items, or adjust anything, just reach out and I'll update the booking.</p>
-        </div>
-      </div>
-      <div class="booking-note">
-        <strong>Can I skip step 1 and book directly?</strong> You can, though I recommend contacting me first. Some projects take longer than anticipated and I want to make sure your job gets done properly within your time window.
-      </div>
-      <div class="cta-center">
-        <a href="https://zcal.co/caleb1223" target="_blank" class="btn btn-amber">Book on zcal</a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ═══════════════ PORTFOLIO ═══════════════ -->
-<div class="page" id="page-portfolio">
-  <section>
-    <div class="section-inner">
-      <div class="section-label">Portfolio</div>
-      <h2 class="section-title">My Work</h2>
-      <p class="section-subtitle">Photos from past jobs coming soon. In the meantime, reviews on TaskRabbit give a good sense of the quality and range of projects I take on.</p>
-      <div class="portfolio-placeholder">
-        <div style="font-size:3rem;">📸</div>
-        <p>Portfolio photos coming soon. Have a look at my <a href="https://www.taskrabbit.com" target="_blank" style="color:var(--amber); font-weight:700;">TaskRabbit profile</a> for client reviews in the meantime.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ═══════════════ FAQs ═══════════════ -->
-<div class="page" id="page-faqs">
-  <section>
-    <div class="section-inner">
-      <div class="section-label">Questions</div>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-subtitle" style="margin-bottom:36px;">If something isn't answered here, just reach out directly.</p>
-      <div class="faqs-list">
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Are you insured? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">Yes! I carry business liability insurance with $1 million in coverage. My live insurance certificate is available to view <a href="https://portal.nextinsurance.com/public/certificates/live-certificate/7b7ea67ce94a2a53c374859226b228c6" target="_blank" style="color:var(--amber);">here</a>.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">How do I book if I'm unsure on timing? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">No worries — just contact me directly. I'll tell you availability and give you a time estimate so you can pick the right slot.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">What's your policy on start times or running late? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">I do my best to arrive on time — I overestimate job lengths and build buffer windows between bookings. I'm more likely to run early than late. That said, like any professional visiting multiple homes in a day, delays can happen. I work with 30-minute arrival windows, and I extend that same courtesy to clients. If I give a 5–5:30pm window and you're stuck in traffic until 5:30, your start time is 5:30 with no extra charge.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">My situation requires certainty on timing. What are my options? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">A couple options: (1) Be my first job of the day at 10:30–11am — this eliminates the risk of earlier jobs running long. (2) Book at night, especially after 8pm — night bookings are less common, so there's far less chance of any cascade delay.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">What if you can't complete something on-site? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">If I'm unable to complete an agreed-upon task once I'm there — for example, a mount I can't do or WiFi equipment I can't configure — you pay nothing for that time. I'll also try to connect you with someone who can.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Will you travel beyond the DC/NoVA area? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">Depending on project scope, yes. Jobs beyond the DMV area may have a larger hourly minimum and/or require a deposit. Just reach out and we'll figure it out.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Do you charge a deposit or cancellation fee? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">For most smaller jobs, no. For larger jobs I may ask for a deposit, since filling a full day slot after a late cancellation is difficult. That deposit counts toward your final price. I'm always willing to work with you on reschedules and genuine emergencies.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">What do I need to know about the Full Day Package? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">The Full Day Package is the most reliable option for large move-ins. Because I block my entire day for you, I require a 50% deposit. If you cancel less than 48 hours before the start time, that deposit is retained. For genuine emergencies or rescheduling needs, contact me — I'll do my best to work something out.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">What's the fastest way to reach you? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">Texting is fastest. WhatsApp and email also work. I try to limit phone use during active jobs, so please give me a few hours — and if you haven't heard back, feel free to follow up.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">What about hauling — what can you take? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">My vehicle is a 2003 Suburban, so most furniture fits — especially pre-assembly. I can haul project trash like boxes and old furniture, but not hazardous materials or general household waste. I'm also open to renting a box truck or pickup on a case-by-case basis.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">What can't you do? <span class="faq-arrow">▾</span></div>
-          <div class="faq-a">Most projects are within my skillset, but some exceptions: complex mounts (TV wall mounts, ceiling mounts, mounts to plaster or concrete), wall-mounted Murphy beds, and anything requiring a license — like most electrical or plumbing work. If you're unsure, just ask. I'll tell you honestly and try to refer you to someone who can help.</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<div class="page" id="page-contact">
-  <section>
-    <div class="section-inner">
-      <div class="section-label">Get in Touch</div>
-      <h2 class="section-title">Contact Me</h2>
-      <p class="section-subtitle" style="margin-bottom:48px;">Reach out with your project details and I'll get back to you with an estimate and availability.</p>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Direct Contact</h3>
-          <div class="contact-method">
-            <div class="contact-icon">📱</div>
-            <div>
-              <div class="contact-method-label">Phone & WhatsApp</div>
-              <div class="contact-method-val"><a href="tel:+12182353924">+1 (218) 235-3924</a></div>
-            </div>
-          </div>
-          <div class="contact-method">
-            <div class="contact-icon">✉️</div>
-            <div>
-              <div class="contact-method-label">Email</div>
-              <div class="contact-method-val"><a href="mailto:caleb1223@gmail.com">caleb1223@gmail.com</a></div>
-            </div>
-          </div>
-          <div class="contact-method">
-            <div class="contact-icon">📍</div>
-            <div>
-              <div class="contact-method-label">Location</div>
-              <div class="contact-method-val">Arlington, Virginia</div>
-            </div>
-          </div>
-          <div class="contact-method">
-            <div class="contact-icon">🗓️</div>
-            <div>
-              <div class="contact-method-label">Book Directly</div>
-              <div class="contact-method-val"><a href="https://zcal.co/caleb1223" target="_blank">zcal.co/caleb1223</a></div>
-            </div>
-          </div>
-          <div style="margin-top:28px; padding:20px; background:var(--cream); border-radius:12px; border:1px solid var(--border);">
-            <p style="font-size:0.85rem; color:var(--text-light); line-height:1.6;"><strong style="color:var(--text-mid);">Response times:</strong> Texting is fastest. I try to avoid my phone during active jobs, so please allow a few hours. If you haven't heard back, a follow-up message is always welcome.</p>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <h3>Send a Message</h3>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" placeholder="Jane" />
-            </div>
-            <div class="form-group">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" placeholder="Smith" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="jane@email.com" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone / WhatsApp (optional)</label>
-            <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
-          </div>
-          <div class="form-group">
-            <label for="service">Service Needed</label>
-            <select id="service">
-              <option value="">Select a service...</option>
-              <option>Furniture Assembly</option>
-              <option>Full Day Package</option>
-              <option>Moving Help</option>
-              <option>Furniture Repair</option>
-              <option>Disassembly / Reassembly</option>
-              <option>Hauling</option>
-              <option>Other / Multiple</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Project Details</label>
-            <textarea id="message" placeholder="Describe your project. If furniture assembly, include links or screenshots of items if possible — it helps me estimate time."></textarea>
-          </div>
-          <button class="form-submit" onclick="handleSubmit()">Send Message</button>
-          <p class="form-note">Or text/WhatsApp directly: <strong>(218) 235-3924</strong> — usually fastest.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">Anderson Home Services</div>
-        <p class="footer-tagline">Furniture assembly and move-in setup serving the DC metro area. From a single item to a full home — same day ready.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Pages</h4>
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('services')">Services</a>
-        <a href="#" onclick="showPage('portfolio')">Portfolio</a>
-        <a href="#" onclick="showPage('faqs')">FAQs</a>
-        <a href="#" onclick="showPage('contact')">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
+<div class="site-shell">
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span><strong>Arlington-based.</strong> Furniture assembly, move-in setup, hauling, and practical home help across the DC metro.</span>
+      <div class="top-links">
         <a href="tel:+12182353924">(218) 235-3924</a>
         <a href="mailto:caleb1223@gmail.com">caleb1223@gmail.com</a>
-        <a href="https://zcal.co/caleb1223" target="_blank">Book on zcal</a>
-        <a href="https://www.taskrabbit.com" target="_blank">TaskRabbit Profile</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Anderson Home Services · Arlington, Virginia</span>
-      <div class="footer-legal">
-        <a href="https://caleb12235.wixsite.com/caleb1223/english-privacy-policy" target="_blank">Privacy Policy</a>
-        <a href="https://caleb12235.wixsite.com/caleb1223/accessibility-statement" target="_blank">Accessibility</a>
-      </div>
-    </div>
-    <p class="disclaimer">TaskRabbit is a third-party platform and does not endorse or sponsor this website or its content. I operate independently and do not represent TaskRabbit.</p>
   </div>
-</footer>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="brand" onclick="showPage('home')" aria-label="Anderson Home Services home">
+        <img src="https://static.wixstatic.com/media/16c886_c6de0a471cd041048e758816adbc0599~mv2.png/v1/fill/w_92,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ChatGPT%20Image%20Apr%2023%2C%202026%2C%2001_19_15%20AM.png" alt="Anderson Home Services logo" />
+        <span>
+          <span class="brand-name">Anderson Home Services</span>
+          <span class="brand-tag">Furniture Assembly & Move-In Setup</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('services')">Services</a></li>
+        <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
+        <li><a href="#" onclick="showPage('faqs')">FAQs</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        <li><a href="https://zcal.co/caleb1223" target="_blank" class="nav-book">Book Here</a></li>
+      </ul>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" onclick="showPage('home'); closeMenu()">Home</a>
+      <a href="#" onclick="showPage('services'); closeMenu()">Services</a>
+      <a href="#" onclick="showPage('portfolio'); closeMenu()">Portfolio</a>
+      <a href="#" onclick="showPage('faqs'); closeMenu()">FAQs</a>
+      <a href="#" onclick="showPage('contact'); closeMenu()">Contact</a>
+      <a href="https://zcal.co/caleb1223" target="_blank" class="nav-book">Book Here</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page active" id="page-home">
+      <header class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="eyebrow">Furniture assembly · move-in setup · hauling</div>
+            <h1>Turn the pile of boxes into a place that feels like home.</h1>
+            <p class="hero-lede">I help with furniture assembly, move-in day setup, disassembly/reassembly, hauling, and the practical odds-and-ends that make a home actually livable.</p>
+            <div class="trust-row" aria-label="Trust highlights">
+              <span class="trust-pill">2,000+ items assembled</span>
+              <span class="trust-pill">Fully insured</span>
+              <span class="trust-pill">Arlington, VA</span>
+              <span class="trust-pill">TaskRabbit reviews available</span>
+            </div>
+            <div class="hero-cta">
+              <a href="https://zcal.co/caleb1223" target="_blank" class="btn btn-primary">Book an Appointment</a>
+              <a href="#" class="btn btn-outline" onclick="showPage('contact')">Ask About a Project</a>
+            </div>
+            <p class="hero-note">Not sure how long your job will take? Text me the item links or screenshots first. I’ll give you a realistic estimate before you book.</p>
+          </div>
+          <aside class="hero-card">
+            <h3>Good fit for:</h3>
+            <ul>
+              <li>One or two furniture items</li>
+              <li>Apartment move-ins</li>
+              <li>Full-day setup projects</li>
+              <li>Facebook Marketplace pickups</li>
+              <li>Cardboard and project trash hauling</li>
+            </ul>
+          </aside>
+        </div>
+      </header>
+
+      <section class="paper-section">
+        <div class="section-inner split">
+          <div class="logo-frame">
+            <img src="https://static.wixstatic.com/media/16c886_c6de0a471cd041048e758816adbc0599~mv2.png/v1/fill/w_700,h_700,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ChatGPT%20Image%20Apr%2023%2C%202026%2C%2001_19_15%20AM.png" alt="Anderson Home Services logo illustration" />
+          </div>
+          <div>
+            <div class="section-label">About Anderson Home Services</div>
+            <h2 class="section-title">Practical help from the person actually showing up.</h2>
+            <div class="copy-card" style="margin-top:18px;">
+              <p>Hi, I’m Caleb. Since 2022, I’ve assembled thousands of pieces of furniture across Arlington, DC, and the surrounding area — everything from single nightstands to large wardrobe systems, garden sheds, and full move-in days.</p>
+              <p>My goal is simple: leave you with a home that works. Not a half-built dresser in the corner, not a hallway full of cardboard, and not a stressful “we’ll finish this tomorrow” situation unless that’s what you choose.</p>
+              <p>I’m not a giant company or a polished concierge service. I’m a local operator who takes the work seriously, communicates clearly, and tries to make the process easier than expected.</p>
+            </div>
+            <div class="stats">
+              <div class="stat"><div class="stat-num">2,000+</div><div class="stat-label">Items assembled</div></div>
+              <div class="stat"><div class="stat-num">$1M</div><div class="stat-label">Insured</div></div>
+              <div class="stat"><div class="stat-num">2022</div><div class="stat-label">Started doing this</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">What makes this easier</div>
+            <h2 class="section-title">Built around reducing move-in stress.</h2>
+            <p class="section-subtitle">A good assembly job is not just about turning screws. It is about showing up prepared, communicating clearly, and leaving the space more livable than it was.</p>
+          </div>
+          <div class="feature-grid">
+            <div class="card"><div class="icon">🛡️</div><h3>Fully insured</h3><p>I carry business liability coverage and can provide a live certificate, so there is no guessing about basic protection.</p></div>
+            <div class="card"><div class="icon">🧰</div><h3>Realistic estimates</h3><p>Send item links or screenshots and I’ll tell you what the job likely involves before you block off your day.</p></div>
+            <div class="card"><div class="icon">🏠</div><h3>Home-first mindset</h3><p>The goal is not just assembled furniture. It is getting your room usable, your boxes reduced, and your day back under control.</p></div>
+            <div class="card"><div class="icon">🌙</div><h3>Night owl discount</h3><p>Book a start time at 8pm or later and save $10/hr. Useful for evening move-ins or busy workdays.</p></div>
+            <div class="card"><div class="icon">💬</div><h3>Plain communication</h3><p>If something is outside my skillset, risky, or better handled by a specialist, I’ll tell you directly.</p></div>
+            <div class="card"><div class="icon">📦</div><h3>All brands welcome</h3><p>IKEA, Wayfair, West Elm, Williams-Sonoma, Walmart, Target, Amazon, and more.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="quote-panel">
+        <div class="quote-panel-inner">
+          <div class="quote-text">“The job is done when the room feels usable — not just when the instructions are technically finished.”</div>
+          <div class="quote-aside">That is the working philosophy here: practical, human, and focused on getting the chaos handled.</div>
+        </div>
+      </div>
+
+      <section class="paper-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">Reviews</div>
+            <h2 class="section-title">People usually hire me for the task. They rehire me because it was easy.</h2>
+            <p class="section-subtitle">Use real TaskRabbit reviews here once copied over. For now, these are placeholders to show layout and tone.</p>
+          </div>
+          <div class="reviews-grid">
+            <div class="card review-card"><div class="stars">★★★★★</div><p class="review-text">“Caleb assembled my entire IKEA bedroom set in a few hours. He was efficient, friendly, and left zero mess.”</p><div class="reviewer">Sarah M.<span>Arlington, VA · TaskRabbit</span></div></div>
+            <div class="card review-card"><div class="stars">★★★★★</div><p class="review-text">“Moved cross-country and had a whole apartment to furnish from scratch. Caleb did it all in one day.”</p><div class="reviewer">James T.<span>Crystal City, VA · TaskRabbit</span></div></div>
+            <div class="card review-card"><div class="stars">★★★★★</div><p class="review-text">“Super communicative, on time, and got through a complicated wardrobe system I was dreading.”</p><div class="reviewer">Anika R.<span>Rosslyn, VA · TaskRabbit</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner" style="text-align:center; max-width:760px;">
+          <div class="section-label">Ready to get started?</div>
+          <h2 class="section-title">Send the project details. I’ll help you figure out the right booking window.</h2>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">The fastest path is usually a text with item links, photos, screenshots, or a quick description of what needs to happen.</p>
+          <div class="hero-cta" style="justify-content:center;margin-top:24px;">
+            <a href="https://zcal.co/caleb1223" target="_blank" class="btn btn-primary">Book an Appointment</a>
+            <a href="#" class="btn btn-outline" onclick="showPage('contact')">Contact Me First</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="page" id="page-services">
+      <section class="paper-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">Services</div>
+            <h2 class="section-title">Furniture assembly is the core. Move-in setup is the bigger picture.</h2>
+            <p class="section-subtitle">Most jobs are simple: you bought something, it came in boxes, and you need it done correctly. Larger jobs can include hauling, setup, disassembly, and coordination around move-in day.</p>
+          </div>
+          <div class="service-grid">
+            <div class="card featured"><span class="badge">Most popular for large jobs</span><h3>Full Day Package — $650 Flat Rate</h3><p>Need to go from empty apartment to livable home in one day? This blocks my day for you from roughly 10am to as late as about 1am, with expensing like dump fees waived. Requires 50% deposit.</p></div>
+            <div class="card"><div class="icon">🔩</div><h3>Furniture Assembly</h3><p>IKEA, Wayfair, West Elm, Williams-Sonoma, Target, Walmart, Amazon, and more. Small items to large systems.</p></div>
+            <div class="card"><div class="icon">🔨</div><h3>Furniture Repair</h3><p>Wobbly doors, loose joints, stuck drawers, and similar practical fixes. If I can’t fix it, you pay $0 for that repair attempt.</p></div>
+            <div class="card"><div class="icon">🚚</div><h3>Moving Help</h3><p>DIY-level moving help with dollies. I can also rent and drive a U-Haul on request for the right job.</p></div>
+            <div class="card"><div class="icon">🔄</div><h3>Disassembly & Reassembly</h3><p>Good for moves, Facebook Marketplace purchases, bed frames, desks, wardrobes, and furniture that needs to fit through tight spaces.</p></div>
+            <div class="card"><div class="icon">🚐</div><h3>Hauling</h3><p>I use a 2003 Chevy Suburban for furniture, cardboard, and project trash. No hazardous or specialty disposal.</p></div>
+            <div class="card"><div class="icon">🛠️</div><h3>Other Projects</h3><p>Basic IT setup, light mounting, yard help, and odd projects. If it’s not a good fit, I’ll say so rather than wing it.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">Pricing</div>
+            <h2 class="section-title">Clear rates, no weird surprises.</h2>
+            <p class="section-subtitle">If any outside expense applies, I’ll tell you before confirming. For bigger jobs, deposits may be required to hold the schedule.</p>
+          </div>
+          <div class="pricing-grid">
+            <div class="card"><h3>Hourly Rate</h3><div class="price-num">$60</div><div class="price-sub">per hour · 1hr minimum</div><p>Best for standard jobs. Charged in 15-minute increments after the first hour.</p></div>
+            <div class="card featured"><h3>Full Day Package</h3><div class="price-num">$650</div><div class="price-sub" style="color:var(--paper-deep);">flat rate · deposit required</div><p>Best for large move-ins or full-home furnishing days. Expensing waived.</p></div>
+            <div class="card"><h3>Handshake Quote</h3><div class="price-num">Fixed</div><div class="price-sub">quoted upfront</div><p>I estimate the time and give you a guaranteed price. If I’m slow, I eat the overrun.</p></div>
+          </div>
+          <div class="pricing-note">
+            <h4>A few more things worth knowing</h4>
+            <ul>
+              <li><strong>Night Owl Discount:</strong> $10/hr off any booking starting at 8pm or later.</li>
+              <li>Expensing may apply to hourly and handshake jobs, but not the Full Day Package.</li>
+              <li>You can stop a job whenever you want and only pay up to that point.</li>
+              <li>Booking on TaskRabbit is also an option, but TaskRabbit’s fees and policies apply.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="paper-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">How to book</div>
+            <h2 class="section-title">A quick estimate first usually saves everyone trouble.</h2>
+          </div>
+          <div class="steps-grid">
+            <div class="card"><h3>1. Reach out</h3><p>Text, WhatsApp, or email. Include item links, screenshots, photos, or a short description.</p></div>
+            <div class="card"><h3>2. Get an estimate</h3><p>I’ll give you a realistic time window and flag anything that may change the plan.</p></div>
+            <div class="card"><h3>3. Book the slot</h3><p>Use the calendar or confirm with me directly. If something changes, just reach out.</p></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="page" id="page-portfolio">
+      <section class="paper-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Real project photos will matter a lot here.</h2>
+            <p class="section-subtitle">This page should eventually show before/after move-ins, large IKEA builds, wardrobe systems, loaded hauling jobs, and clean finished spaces. Authentic photos will outperform stock imagery.</p>
+          </div>
+          <div class="card" style="text-align:center; padding:54px 24px;">
+            <div class="icon" style="font-size:3rem;">📸</div>
+            <h3>Portfolio photos coming soon.</h3>
+            <p>For now, link this to real TaskRabbit reviews or a small gallery of past job photos once you have permission to use them.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="page" id="page-faqs">
+      <section class="paper-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">FAQs</div>
+            <h2 class="section-title">Questions worth answering before someone books.</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Are you insured? <span class="faq-arrow">▾</span></div><div class="faq-a">Yes. I carry business liability insurance with $1 million in coverage. My live insurance certificate is available to view <a href="https://portal.nextinsurance.com/public/certificates/live-certificate/7b7ea67ce94a2a53c374859226b228c6" target="_blank" style="color:var(--copper);font-weight:900;">here</a>.</div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I book if I’m unsure on timing? <span class="faq-arrow">▾</span></div><div class="faq-a">Contact me first. Send item links, screenshots, or a rough description and I’ll help you choose the right booking window.</div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What’s your policy on start times? <span class="faq-arrow">▾</span></div><div class="faq-a">I work with 30-minute arrival windows and try to build buffers between jobs. If your situation requires certainty, book as my first job of the day or later in the evening.</div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What if you can’t complete something on-site? <span class="faq-arrow">▾</span></div><div class="faq-a">If I’m unable to complete an agreed-upon task once I’m there — for example, a mount I can’t safely do or equipment I can’t configure — you pay nothing for that portion of the work.</div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you charge deposits or cancellation fees? <span class="faq-arrow">▾</span></div><div class="faq-a">For most smaller jobs, no. For larger jobs or full-day blocks, I may ask for a deposit because filling that time after a late cancellation is difficult.</div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What can’t you do? <span class="faq-arrow">▾</span></div><div class="faq-a">Complex TV mounts, ceiling mounts, plaster/concrete mounting, wall-mounted Murphy beds, and anything requiring a licensed electrician or plumber are usually not a fit.</div></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="page" id="page-contact">
+      <section class="paper-section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">Tell me what you need done.</h2>
+            <p class="section-subtitle">Text is usually fastest. Links, screenshots, photos, or a short project description help me estimate accurately.</p>
+          </div>
+          <div class="contact-grid">
+            <div class="card">
+              <div class="contact-method"><div class="contact-icon">📱</div><div><div class="contact-label">Phone & WhatsApp</div><div class="contact-value"><a href="tel:+12182353924">+1 (218) 235-3924</a></div></div></div>
+              <div class="contact-method"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:caleb1223@gmail.com">caleb1223@gmail.com</a></div></div></div>
+              <div class="contact-method"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-value">Arlington, Virginia</div></div></div>
+              <div class="contact-method"><div class="contact-icon">🗓️</div><div><div class="contact-label">Book Directly</div><div class="contact-value"><a href="https://zcal.co/caleb1223" target="_blank">zcal.co/caleb1223</a></div></div></div>
+              <p style="color:var(--muted);margin-top:14px;">I try to avoid phone use during active jobs. If you don’t hear back right away, a follow-up text is welcome.</p>
+            </div>
+            <div class="contact-form">
+              <h3 style="color:var(--walnut);margin-bottom:16px;">Send a Message</h3>
+              <div class="form-row">
+                <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Jane" /></div>
+                <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Smith" /></div>
+              </div>
+              <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="jane@email.com" /></div>
+              <div class="form-group"><label for="phone">Phone / WhatsApp</label><input type="tel" id="phone" placeholder="+1 (555) 000-0000" /></div>
+              <div class="form-group"><label for="service">Service Needed</label><select id="service"><option value="">Select a service...</option><option>Furniture Assembly</option><option>Full Day Package</option><option>Moving Help</option><option>Furniture Repair</option><option>Disassembly / Reassembly</option><option>Hauling</option><option>Other / Multiple</option></select></div>
+              <div class="form-group"><label for="message">Project Details</label><textarea id="message" placeholder="Describe the project. Item links/screenshots/photos help a lot for time estimates."></textarea></div>
+              <button class="form-submit" onclick="handleSubmit()">Send Message</button>
+              <p class="form-note">Or text/WhatsApp directly: <strong>(218) 235-3924</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><div class="footer-brand">Anderson Home Services</div><p>Furniture assembly and move-in setup serving Arlington and the DC metro area. From a single item to a full home — practical help, done carefully.</p></div>
+        <div class="footer-col"><h4>Pages</h4><a href="#" onclick="showPage('home')">Home</a><a href="#" onclick="showPage('services')">Services</a><a href="#" onclick="showPage('portfolio')">Portfolio</a><a href="#" onclick="showPage('faqs')">FAQs</a><a href="#" onclick="showPage('contact')">Contact</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="tel:+12182353924">(218) 235-3924</a><a href="mailto:caleb1223@gmail.com">caleb1223@gmail.com</a><a href="https://zcal.co/caleb1223" target="_blank">Book on zcal</a><a href="https://www.taskrabbit.com" target="_blank">TaskRabbit Profile</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Anderson Home Services · Arlington, Virginia</span><div class="footer-legal"><a href="https://caleb12235.wixsite.com/caleb1223/english-privacy-policy" target="_blank">Privacy Policy</a><a href="https://caleb12235.wixsite.com/caleb1223/accessibility-statement" target="_blank">Accessibility</a></div></div>
+      <p class="disclaimer">TaskRabbit is a third-party platform and does not endorse or sponsor this website or its content. I operate independently and do not represent TaskRabbit.</p>
+    </div>
+  </footer>
+</div>
 
 <script>
   function showPage(name) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + name).classList.add('active');
+    closeMenu();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-
-  function closeMenu() {
-    document.getElementById('mobileMenu').classList.remove('open');
-  }
-
-  function toggleFaq(el) {
-    const item = el.parentElement;
-    item.classList.toggle('open');
-  }
-
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
   function handleSubmit() {
     const name = document.getElementById('fname').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
-    if (!name || !email || !message) {
-      alert('Please fill in your name, email, and project details.');
-      return;
-    }
+    if (!name || !email || !message) { alert('Please fill in your name, email, and project details.'); return; }
     const subject = encodeURIComponent('Anderson Home Services Inquiry');
-    const body = encodeURIComponent(
-      `Name: ${name} ${document.getElementById('lname').value}\nPhone: ${document.getElementById('phone').value}\nService: ${document.getElementById('service').value}\n\n${message}`
-    );
+    const body = encodeURIComponent(`Name: ${name} ${document.getElementById('lname').value}\nPhone: ${document.getElementById('phone').value}\nService: ${document.getElementById('service').value}\n\n${message}`);
     window.location.href = `mailto:caleb1223@gmail.com?subject=${subject}&body=${body}`;
   }
 </script>
-
 </body>
 </html>
