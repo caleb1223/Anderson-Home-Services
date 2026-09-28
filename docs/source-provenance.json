@@ -1,0 +1,98 @@
+[
+  {
+    "source": "AHS Claude Vibe Code 1.0.html",
+    "sourceSha256": "ca0c19c32c8d44d8669d6f4936de2cc46317872eacacf23b4e8e63284260444e",
+    "sourceModified": "2026-05-26T03:58:07.148Z",
+    "approximateLocalDate": "2026-05-25",
+    "message": "Import earliest saved single-page prototype"
+  },
+  {
+    "source": "AHS ChatGPT Vibe Code 1.0.html",
+    "sourceSha256": "9c82f5fa2965e8d7902b0e6c1c43f99c4482c6c41f4a5987ae62f17c98e91b59",
+    "sourceModified": "2026-05-26T04:42:14.460Z",
+    "approximateLocalDate": "2026-05-26",
+    "message": "Revise the single-page design and move-in service copy"
+  },
+  {
+    "source": "AHS ChatGPT Vibe Code 7.0.html",
+    "sourceSha256": "c8e1683de8bb8fe23493a4b9d16ef7295ca25098606315cfb5f332ff2b9b264d",
+    "sourceModified": "2026-05-27T05:08:18.049Z",
+    "approximateLocalDate": "2026-05-27",
+    "message": "Refine project examples, contact flow, and business introduction"
+  },
+  {
+    "source": "anderson-home-services-final-launch-skiplink-hidden.zip",
+    "sourceSha256": "7ffc880a6c48534afb0792e2a99fccc1a1789295b089277b861de4cae27ede3c",
+    "sourceModified": "2026-05-28T23:11:51.928Z",
+    "approximateLocalDate": "2026-05-28",
+    "message": "Split the site into service, portfolio, FAQ, contact, and policy pages"
+  },
+  {
+    "source": "anderson-home-services-policies-hours-update.zip",
+    "sourceSha256": "46352c05a1b15b5471999be70f8afce2bdaeb9545a6898aceafb28a133d7b64c",
+    "sourceModified": "2026-05-29T23:48:30.948Z",
+    "approximateLocalDate": "2026-05-29",
+    "message": "Add same-day guidance, service policies, hours, and updated reviews"
+  },
+  {
+    "source": "anderson-home-services-domain-pricing-polish.zip",
+    "sourceSha256": "2c08e0c82a1d11a3a0b291e54b080c2fa94f7d7ee12460197dbc510dfdbb82ce",
+    "sourceModified": "2026-05-30T06:39:45.994Z",
+    "approximateLocalDate": "2026-05-30",
+    "message": "Add service areas and refine domain, pricing, and booking copy"
+  },
+  {
+    "source": "anderson-home-services-about-caleb-photo-update.zip",
+    "sourceSha256": "35292eb9938ecf751686dd55d39f3221f9b9304a528edb247b4c42d496e8f05f",
+    "sourceModified": "2026-06-17T05:00:38.632Z",
+    "approximateLocalDate": "2026-06-17",
+    "message": "Add Caleb biography and photo with arrival-window policies"
+  },
+  {
+    "source": "anderson-home-services-live-hours-fixed.zip",
+    "sourceSha256": "96ad5f27d92f2daecd4c65cb040f8de28b3fe479f761653a6ce9330df7ed61d2",
+    "sourceModified": "2026-07-31T04:07:59.377Z",
+    "approximateLocalDate": "2026-07-31",
+    "message": "Update full-day pricing, office services, and live-hours links"
+  },
+  {
+    "source": "anderson-home-services-remote-setup-update.zip",
+    "sourceSha256": "efa3c6fa72825934a622fdd03bdebf940f8a0809b9bfb9484f10aeae6a22f242",
+    "sourceModified": "2026-08-16T06:58:17.512Z",
+    "approximateLocalDate": "2026-08-16",
+    "message": "Add remote move-in setup examples and furniture repair portfolio"
+  },
+  {
+    "source": "anderson-home-services-review-map-rework.zip",
+    "sourceSha256": "f9cfe254ac3a960555a917e49019a3ce117d5fde00caa096de65102166c1bd89",
+    "sourceModified": "2026-08-21T04:44:31.425Z",
+    "approximateLocalDate": "2026-08-21",
+    "message": "Add Google reviews, service-area map, and clearer fixed-quote scope"
+  },
+  {
+    "source": "anderson-home-services-2026-08-31-update.zip",
+    "sourceSha256": "a32e14cd1733c7123a9709a8ae256536aa611777d6bb597383857ac832e44586",
+    "sourceModified": "2026-08-31T18:41:11.108Z",
+    "approximateLocalDate": "2026-08-31",
+    "message": "Clarify arrival discounts, billing messages, and vehicle availability"
+  },
+  {
+    "source": "anderson-home-services-2026-09-02-policy-cleanup.zip",
+    "sourceSha256": "1a7aac956eb88cc73f5bd3f70ed21bb744382f11f0aafd3ade382db5da649164",
+    "sourceModified": "2026-09-02T05:55:36.187Z",
+    "approximateLocalDate": "2026-09-02",
+    "message": "Expand project portfolio and clarify stacked scheduling discounts"
+  },
+  {
+    "source": "anderson-home-services-2026-09-12-hours-privacy.zip",
+    "sourceSha256": "40219ce59b15fc234faeda7cd1130ca09d5f14e9ff6160e75cac8a2def6d0697",
+    "sourceModified": "2026-09-12T04:28:07.649Z",
+    "approximateLocalDate": "2026-09-12",
+    "message": "Update business hours and Tally/Square privacy disclosures"
+  },
+  {
+    "source": "Current website folder verified against Cloudflare deployment ac458254-c54e-48d1-aca1-cd7b310ccea7",
+    "message": "Preserve deployed September website with SEO, accessibility, tests, and TV project",
+    "approximateLocalDate": "2026-09-24"
+  }
+]

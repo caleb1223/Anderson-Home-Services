@@ -1,0 +1,197 @@
+{
+  "deploymentId": "ac458254-c54e-48d1-aca1-cd7b310ccea7",
+  "url": "https://andersonhomeservicesdmv.com",
+  "verifiedAt": "2026-09-28T19:55:22.291Z",
+  "files": [
+    {
+      "path": "about.html",
+      "bytes": 9527,
+      "sha256": "e6b01833d3ac163bbd630ae67905c9b3dab8b9dc950d2194cfdd992521f08727"
+    },
+    {
+      "path": "accessibility.html",
+      "bytes": 8763,
+      "sha256": "2f7ddfea4fed6b40a487f3d9d04956d5b64f408d26cda3c4c966896d60fa3a56"
+    },
+    {
+      "path": "areas.html",
+      "bytes": 9853,
+      "sha256": "0585ebd4cd67855b21b564282d89e84265399583aee86a0c6bf794b062886b8f"
+    },
+    {
+      "path": "contact.html",
+      "bytes": 11110,
+      "sha256": "032ed91623b1a8a0a845b7cc03aad8c25b8215861d859ca07d7bfacc7002afde"
+    },
+    {
+      "path": "faqs.html",
+      "bytes": 14743,
+      "sha256": "f7fd009717c5b624c33b9a2b8b196561204a6cb28c26a6412cfab529655767a5"
+    },
+    {
+      "path": "index.html",
+      "bytes": 17374,
+      "sha256": "ddc059c50d3575d9baedc9a1381bb07114ea994f39f4d995029511ea7892248b"
+    },
+    {
+      "path": "policies.html",
+      "bytes": 15425,
+      "sha256": "699dfc858abf13816937154dfedf79395f16a74a5e82db281f938b4440524499"
+    },
+    {
+      "path": "portfolio.html",
+      "bytes": 13395,
+      "sha256": "373331c17690417b4d320f7f4f75f1af43d550b8a57961434934906136101bdf"
+    },
+    {
+      "path": "privacy.html",
+      "bytes": 12820,
+      "sha256": "d7b96169102cb02c897128f38244a79d8db493b950fb9cd92e48edc146fd48d7"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 257,
+      "sha256": "7fc13cf5bb65861c6e8aa2b5a2e6b16805c13934f3f7ce962bc2481df6756c2a"
+    },
+    {
+      "path": "services.html",
+      "bytes": 19883,
+      "sha256": "8290873fd39b25cb1d96d3a9e56d400df4369143819030fbb93e7215068e38d3"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 786,
+      "sha256": "950841791dfbf55fe749c041f003a5b842aba5e04277cd4364d264ed36919825"
+    },
+    {
+      "path": "assets/about-caleb.jpg",
+      "bytes": 676642,
+      "sha256": "87dc32d3267e626f53ac7addf32b8c39ac9807d4875e40c2a46f2b9fc5c1a556"
+    },
+    {
+      "path": "assets/apple-touch-icon.png",
+      "bytes": 965,
+      "sha256": "f4d82863bfcf0bb317af9223087e4813cff013835c68c390422886d8924a9619"
+    },
+    {
+      "path": "assets/areas.css",
+      "bytes": 8688,
+      "sha256": "60a2a85d4b5c215111b88d5f5c95213760e0ae762ae758c4e708cedf7e27d60d"
+    },
+    {
+      "path": "assets/artwork-picture-light.jpg",
+      "bytes": 227281,
+      "sha256": "0df7ca45bcfd6b586d344d61a1f90d889bd8abe28c91fb122e0ff4f0199bc837"
+    },
+    {
+      "path": "assets/black-bed-complete.jpg",
+      "bytes": 473964,
+      "sha256": "682b5371ae3294440e76a367972a9dc25cb47c42a3093df5b101625d57284c8a"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "bytes": 309,
+      "sha256": "8e07674b4a24a46fd005b9315f4bbb74ddae1efc54daf1dc40dbf915f3e84f54"
+    },
+    {
+      "path": "assets/large-storage-wall.jpg",
+      "bytes": 189725,
+      "sha256": "fa8daa1ac4fac027adff823807f74e5d6e86e338735e6b9883b16a2b4a24946c"
+    },
+    {
+      "path": "assets/loft-bed-complete.jpg",
+      "bytes": 627718,
+      "sha256": "8a4474b39d3bebc4a66005d765891a1bf0c3905370e34a348c5ee64fe42311cf"
+    },
+    {
+      "path": "assets/loft-bed-instructions.jpg",
+      "bytes": 263978,
+      "sha256": "e509dbb5e820e96fc22467e1e084ac4e266255c5e477de5d429dd4c50f807ed5"
+    },
+    {
+      "path": "assets/loft-bed-parts-staged.jpg",
+      "bytes": 660454,
+      "sha256": "0453fab3d914e4defea3de76678355af1e00f1c22e0c087de5b6194169944f65"
+    },
+    {
+      "path": "assets/logo.png",
+      "bytes": 216173,
+      "sha256": "7875c7724d3f8de991e912032ebc780cb731ee4253d5b01b6ee3039768dfdcb8"
+    },
+    {
+      "path": "assets/office-desks.jpg",
+      "bytes": 451935,
+      "sha256": "3b5c3a663d1b21690aa7c7ce750dbe5e51fbd520614014eac025b5887b1b7f81"
+    },
+    {
+      "path": "assets/preferences.css",
+      "bytes": 317,
+      "sha256": "ebcb7cb3c2f740b2a040b1ffd22457ba3e27d15b8518b2f2b633f0ef5498e9cb"
+    },
+    {
+      "path": "assets/reception-desk.jpg",
+      "bytes": 420154,
+      "sha256": "b8f2589e5ed2e8800cbca40db75a51e582315cef0388744660751b19ce129dfb"
+    },
+    {
+      "path": "assets/repair-core.jpg",
+      "bytes": 730543,
+      "sha256": "9291ed10386e91ab78f1242dc91482c26532c5f4cd4389948bdfe1534cff2074"
+    },
+    {
+      "path": "assets/repair-damaged.jpg",
+      "bytes": 634530,
+      "sha256": "581dff1836157a987f15e270202c2a0b07e8e6d34fd62c90debdfac9fca78f5a"
+    },
+    {
+      "path": "assets/repair-finished-bed.jpg",
+      "bytes": 167456,
+      "sha256": "afa542d334cf0287bb9900486ae5372fe356c5ca0198f6175f9cc47e6f350b7b"
+    },
+    {
+      "path": "assets/repair-rebuild.jpg",
+      "bytes": 552834,
+      "sha256": "57fb97693386b6955549273755c81fc55cf9ebb5090fc8bc215a0419c1e49f0b"
+    },
+    {
+      "path": "assets/repair-threaded-insert.jpg",
+      "bytes": 631233,
+      "sha256": "824be51e3cade8ebdd65ea986b0072b326ff58ad990bb82afb51662277e9a2ad"
+    },
+    {
+      "path": "assets/site.css",
+      "bytes": 27401,
+      "sha256": "91f1ae177465cf22842c2f9b211056a274d792e53875e6b402db6d68386e9216"
+    },
+    {
+      "path": "assets/site.js",
+      "bytes": 1069,
+      "sha256": "06c21046a470c0b062a4cb786918439b6f6c860e5c23ec6f52fd56bd35575935"
+    },
+    {
+      "path": "assets/social-card.png",
+      "bytes": 32055,
+      "sha256": "349de07eea28a873f8699ddfe8a25ef345dbdbb0621ad9e7cb5792f18b5cb2d3"
+    },
+    {
+      "path": "assets/storage-container.jpg",
+      "bytes": 507575,
+      "sha256": "168241aa95a454f6fe8f8c513edb0d9e46ec2dc764fc528d1974f4cf5b7aee8e"
+    },
+    {
+      "path": "assets/tv-stand-bookcases.jpg",
+      "bytes": 2087313,
+      "sha256": "4d24fbcf68b9c108a27759b17bca6d478edac320a12d32109a30d0406e108415"
+    },
+    {
+      "path": "assets/wood-desk.jpg",
+      "bytes": 461892,
+      "sha256": "4c376adc0adaf056169dbc8bb0e55d446db38394c34f2f616b1d18c4d9c887e5"
+    }
+  ],
+  "cloudflareProject": "andersonhomeservices",
+  "sourceType": "direct-upload",
+  "productionBranchLabel": "main",
+  "connectedGitRepository": null,
+  "note": "Existing deployment only; this reconstruction does not deploy anything."
+}

@@ -4,783 +4,23 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Furniture Assembly &amp; Remote Move-In Setup | Anderson Home Services</title>
-<meta content="Furniture assembly, remote move-in setup before arrival, full-day home setup, moving help, reassembly, and hauling across Washington DC and the DMV." name="description"/>
+<title>Furniture Assembly &amp; Move-In Services | Anderson Home Services</title>
+<meta content="Furniture assembly, full-apartment setup and light home work in DC, Northern Virginia &amp; Montgomery County, MD. $60/hr, fixed quotes and a $750 Full Day Package." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Source+Sans+3:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
-    :root {
-      --night: #1a120d;
-      --coffee: #241811;
-      --walnut: #3a2619;
-      --cedar: #553923;
-      --bark: #725033;
-      --copper: #b97736;
-      --copper-light: #d69a56;
-      --ember: #f0b768;
-      --paper: #f3eadc;
-      --paper-deep: #e8d8bf;
-      --cream: #fff7ea;
-      --ink: #25180f;
-      --muted: #77604c;
-      --soft: #b99f82;
-      --line: rgba(255, 236, 204, 0.18);
-      --line-dark: rgba(58, 38, 25, 0.18);
-      --shadow: 0 16px 42px rgba(0,0,0,.28);
-      --shadow-soft: 0 7px 24px rgba(42, 25, 15, .14);
-      --radius: 10px;
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: var(--paper);
-      background:
-        radial-gradient(circle at top left, rgba(185,119,54,.22), transparent 32rem),
-        linear-gradient(180deg, #1a120d 0%, #241811 40%, #1a120d 100%);
-      line-height: 1.55;
-      font-size: 16px;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .08;
-      background-image:
-        linear-gradient(45deg, rgba(255,255,255,.6) 1px, transparent 1px),
-        linear-gradient(-45deg, rgba(255,255,255,.45) 1px, transparent 1px);
-      background-size: 38px 38px, 53px 53px;
-      mix-blend-mode: screen;
-      z-index: 0;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    p { color: inherit; }
-    h1, h2, h3, h4 { font-family: 'Libre Baskerville', Georgia, serif; line-height: 1.16; }
-
-    .site-shell { position: relative; z-index: 1; }
-
-    .top-strip {
-      background: #120c08;
-      border-bottom: 1px solid var(--line);
-      color: var(--soft);
-      font-size: .78rem;
-    }
-    .top-strip-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 5px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      text-align: center;
-    }
-    .top-strip strong { color: var(--ember); }
-    .service-alert {
-      background: linear-gradient(180deg, rgba(58,38,25,.96), rgba(36,24,17,.98));
-      border-bottom: 1px solid rgba(240,183,104,.24);
-      color: var(--paper-deep);
-      font-size: .91rem;
-    }
-    .service-alert-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 10px 20px;
-      text-align: center;
-    }
-    .service-alert strong { color: var(--ember); }
-
-    .top-links { display: none; }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #17100b;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 6px 24px rgba(0,0,0,.25);
-    }
-    .nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      min-height: 70px;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      min-width: 0;
-    }
-    .brand img {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      border: 2px solid rgba(240,183,104,.45);
-      box-shadow: 0 0 0 4px rgba(185,119,54,.12);
-      object-fit: cover;
-    }
-    .brand-name {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.06rem;
-      letter-spacing: .01em;
-      color: var(--cream);
-    }
-    .brand-tag {
-      display: none;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .nav-links a {
-      color: var(--paper-deep);
-      padding: 9px 11px;
-      border-radius: 7px;
-      font-size: .93rem;
-      font-weight: 700;
-    }
-    .nav-links a:hover { background: rgba(255,255,255,.07); color: var(--ember); }
-    .nav-book {
-      margin-left: 4px;
-      background: linear-gradient(180deg, var(--copper-light), var(--copper));
-      color: #1c1109 !important;
-      border: 1px solid rgba(255,255,255,.22);
-      box-shadow: 0 5px 16px rgba(185,119,54,.26);
-    }
-    .nav-book:hover { background: var(--ember) !important; }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 9px;
-      background: rgba(255,247,234,.07);
-      border: 1px solid rgba(255,247,234,.16);
-      border-radius: 9px;
-      box-shadow: none;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    .hamburger span { width: 24px; height: 2px; background: var(--ember); border-radius: 2px; }
-    .hamburger:hover { background: rgba(255,247,234,.11); border-color: rgba(240,183,104,.36); }
-    .mobile-menu { display: none; background: var(--coffee); border-top: 1px solid var(--line); padding: 12px 20px 20px; }
-    .mobile-menu.open { display: grid; gap: 6px; }
-    .mobile-menu a { padding: 11px 12px; border-radius: 8px; font-weight: 800; color: var(--paper-deep); }
-    .mobile-menu a:hover { background: rgba(255,255,255,.07); }
-    .mobile-menu .nav-book { text-align: center; color: #1c1109 !important; }
-
-    .page { display: block; }
-
-    .hero {
-      position: relative;
-      min-height: 620px;
-      display: grid;
-      align-items: center;
-      padding: 58px 20px;
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(26,18,13,.94) 0%, rgba(26,18,13,.86) 48%, rgba(26,18,13,.47) 100%),
-        url('assets/logo.png');
-      background-size: cover;
-      background-position: center right;
-      opacity: .78;
-      z-index: -2;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 180px;
-      background: linear-gradient(transparent, var(--coffee));
-      z-index: -1;
-    }
-    .hero-inner {
-      width: 100%;
-      max-width: var(--max);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 680px) 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .eyebrow {
-      color: var(--ember);
-      font-size: .83rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      margin-bottom: 14px;
-    }
-    .hero h1 {
-      font-size: clamp(2.25rem, 5vw, 4.55rem);
-      max-width: 720px;
-      color: var(--cream);
-      text-shadow: 0 3px 14px rgba(0,0,0,.35);
-      letter-spacing: -.035em;
-    }
-    .hero-lede {
-      margin-top: 18px;
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: var(--paper-deep);
-      max-width: 610px;
-    }
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 24px 0 30px;
-    }
-    .trust-pill {
-      border: 1px solid rgba(240,183,104,.28);
-      background: rgba(255,247,234,.08);
-      color: var(--paper);
-      padding: 8px 11px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: .88rem;
-    }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 20px;
-      border-radius: 8px;
-      font-weight: 900;
-      font-size: 1rem;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: transform .15s ease, background .15s ease, color .15s ease;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: rgba(240,183,104,.92); color: #1d120a; border-color: rgba(255,255,255,.20); box-shadow: 0 6px 18px rgba(185,119,54,.18); }
-    .btn-primary:hover { background: #ffd08a; }
-    .btn-secondary { background: var(--ember); color: #1d120a; border-color: rgba(255,255,255,.24); box-shadow: 0 8px 24px rgba(185,119,54,.24); }
-    .btn-secondary:hover { background: #ffd08a; }
-    .btn-outline { background: rgba(255,255,255,.045); color: var(--cream); border-color: rgba(255,255,255,.24); }
-    .btn-outline:hover { background: rgba(255,255,255,.10); }
-    .btn-small { padding: 10px 15px; font-size: .92rem; }
-    .hero-note {
-      margin-top: 18px;
-      color: var(--soft);
-      font-size: .92rem;
-      max-width: 520px;
-    }
-    .hero-card {
-      align-self: end;
-      background: rgba(30,20,13,.86);
-      color: var(--paper);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(240,183,104,.26);
-      padding: 22px;
-      max-width: 360px;
-      justify-self: end;
-      backdrop-filter: blur(4px);
-    }
-    .hero-card h3 { color: var(--cream); font-size: 1.08rem; margin-bottom: 10px; }
-    .hero-card ul { list-style: none; display: grid; gap: 8px; }
-    .hero-card li { color: var(--paper-deep); font-weight: 700; padding-left: 22px; position: relative; }
-    .hero-card li::before { content: "✓"; position: absolute; left: 0; color: var(--copper); font-weight: 900; }
-
-    section { padding: 58px 20px; }
-    .section-inner { max-width: var(--max); margin: 0 auto; }
-    .section-head { margin-bottom: 30px; max-width: 760px; }
-    .section-label {
-      font-size: .8rem;
-      font-weight: 900;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--copper-light);
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: clamp(1.65rem, 3vw, 2.5rem);
-      color: var(--cream);
-      letter-spacing: -.018em;
-    }
-    .section-subtitle {
-      margin-top: 12px;
-      color: var(--paper-deep);
-      max-width: 680px;
-      font-size: 1.04rem;
-    }
-    .paper-section {
-      background:
-        radial-gradient(circle at top right, rgba(185,119,54,.12), transparent 28rem),
-        linear-gradient(180deg, #21160f 0%, #1a120d 100%);
-      color: var(--paper);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .paper-section .section-title { color: var(--cream); }
-    .paper-section .section-subtitle { color: var(--paper-deep); }
-    .paper-section .section-label { color: var(--ember); }
-
-    .split {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 44px;
-      align-items: center;
-    }
-    .logo-frame {
-      background: #1d130d;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: var(--shadow-soft);
-    }
-    .logo-frame img { border-radius: 10px; }
-    .copy-card {
-      background: rgba(255,247,234,.055);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 28px;
-    }
-    .copy-card p { color: var(--paper-deep); margin-bottom: 13px; }
-    .copy-card p:last-child { margin-bottom: 0; }
-    .paper-section .copy-card { background: rgba(255,247,234,.065); border-color: var(--line); }
-    .paper-section .copy-card p { color: var(--paper-deep); }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 22px;
-    }
-    .stat {
-      background: rgba(255,247,234,.08);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 16px;
-    }
-    .stat-num { font-family: 'Libre Baskerville', Georgia, serif; color: var(--ember); font-size: 1.8rem; font-weight: 700; }
-    .stat-label { color: var(--soft); font-weight: 900; text-transform: uppercase; letter-spacing: .08em; font-size: .76rem; }
-    .paper-section .stat { background: rgba(255,247,234,.075); border-color: var(--line); }
-    .paper-section .stat-label { color: var(--soft); }
-
-    .feature-grid,
-    .service-grid,
-    .reviews-grid,
-    .pricing-grid,
-    .steps-grid {
-      display: grid;
-      gap: 16px;
-    }
-    .feature-grid { grid-template-columns: repeat(3, 1fr); }
-    .service-grid { grid-template-columns: repeat(3, 1fr); }
-    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
-    .steps-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .card {
-      border-radius: 12px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255,247,234,.075);
-      box-shadow: 0 8px 26px rgba(0,0,0,.12);
-    }
-    .paper-section .card {
-      background: rgba(255,247,234,.07);
-      border-color: var(--line);
-      box-shadow: 0 8px 26px rgba(0,0,0,.14);
-    }
-    .card h3 { color: var(--cream); font-size: 1.08rem; margin-bottom: 9px; }
-    .paper-section .card h3 { color: var(--cream); }
-    .card p { color: var(--paper-deep); font-size: .96rem; }
-    .paper-section .card p { color: var(--paper-deep); }
-    .icon { font-size: 1.55rem; margin-bottom: 10px; }
-    .card.featured {
-      background: linear-gradient(145deg, var(--walnut), var(--cedar));
-      border-color: rgba(240,183,104,.32);
-      color: var(--paper);
-      grid-column: span 2;
-    }
-    .paper-section .card.featured h3,
-    .card.featured h3 { color: var(--cream); }
-    .paper-section .card.featured p,
-    .card.featured p { color: var(--paper-deep); }
-    .badge {
-      display: inline-block;
-      background: rgba(240,183,104,.18);
-      color: var(--ember);
-      border: 1px solid rgba(240,183,104,.28);
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: .73rem;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      font-weight: 900;
-      margin-bottom: 11px;
-    }
-
-    .quote-panel {
-      background: #17100b;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 34px 20px;
-    }
-    .quote-panel-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 26px;
-      align-items: center;
-    }
-    .quote-text {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      color: var(--cream);
-      font-size: clamp(1.35rem, 2.3vw, 2rem);
-      line-height: 1.28;
-    }
-    .quote-aside {
-      color: var(--soft);
-      border-left: 3px solid var(--copper);
-      padding-left: 18px;
-      font-weight: 600;
-    }
-
-    .price-num {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      color: var(--copper);
-      font-size: 2.3rem;
-      font-weight: 700;
-      margin: 8px 0 3px;
-    }
-    .price-sub { color: var(--paper-deep); font-weight: 800; font-size: .88rem; margin-bottom: 12px; }
-    .pricing-note {
-      margin-top: 18px;
-      background: linear-gradient(180deg, rgba(58,38,25,.92), rgba(36,24,17,.96));
-      border: 1px solid var(--line);
-      border-left: 5px solid var(--copper);
-      border-radius: 8px;
-      padding: 20px 22px;
-    }
-    .pricing-note h4 { color: var(--cream); margin-bottom: 10px; }
-    .pricing-note ul { list-style: none; display: grid; gap: 7px; }
-    .pricing-note li { position: relative; padding-left: 22px; color: var(--paper-deep); }
-    .pricing-note li::before { content: "•"; position: absolute; left: 5px; color: var(--copper); font-weight: 900; }
-
-    .review-card .stars { color: var(--copper); letter-spacing: 2px; margin-bottom: 9px; font-weight: 900; }
-    .review-text { font-style: italic; }
-    .reviewer { margin-top: 14px; font-weight: 900; color: var(--cream); }
-    .reviewer span { display: block; color: var(--soft); font-size: .84rem; font-weight: 700; }
-
-
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .project-card {
-      overflow: hidden;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255,247,234,.06);
-    }
-    .project-card.wide {
-      grid-column: span 2;
-    }
-    .project-card.wide img { aspect-ratio: 16 / 9; }
-    .project-card.subtle { opacity: .92; }
-    .project-case {
-      grid-column: 1 / -1;
-      padding: 0;
-      overflow: hidden;
-    }
-    .case-images {
-      display: grid;
-      grid-template-columns: .82fr 1.1fr 1.1fr;
-      gap: 1px;
-      background: var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .case-images img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      background: rgba(255,247,234,.06);
-    }
-    .case-images .paper-shot { object-position: center; }
-    .case-body { padding: 20px; }
-    .case-body h3 { color: var(--cream); font-size: 1.18rem; margin-bottom: 8px; }
-    .case-body p { color: var(--paper-deep); font-size: .96rem; max-width: 880px; }
-    .project-body { padding: 18px; }
-    .project-body h3 { color: var(--cream); font-size: 1rem; margin-bottom: 7px; }
-    .project-body p { color: var(--paper-deep); font-size: .93rem; }
-    .project-kicker {
-      color: var(--ember);
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .faq-list { display: grid; gap: 10px; }
-    .faq-item {
-      background: linear-gradient(180deg, rgba(58,38,25,.96), rgba(36,24,17,.98));
-      color: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(0,0,0,.18);
-    }
-    .faq-q {
-      padding: 17px 20px;
-      font-weight: 900;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-      color: var(--paper);
-    }
-    .faq-q:hover { background: rgba(255,247,234,.055); }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .25s ease, padding .25s ease;
-      color: var(--paper-deep);
-      border-top: 0 solid transparent;
-    }
-    .faq-item.open .faq-a {
-      max-height: 420px;
-      padding: 0 20px 18px;
-    }
-    .faq-arrow { color: var(--ember); }
-
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px; align-items: start; }
-    .contact-method { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; margin-bottom: 16px; }
-    .contact-icon { width: 40px; height: 40px; border-radius: 8px; display: grid; place-items: center; background: rgba(255,247,234,.08); border: 1px solid var(--line); }
-    .contact-label { text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; color: var(--soft); font-weight: 900; }
-    .contact-value { color: var(--copper); font-weight: 900; }
-    .contact-value a { color: var(--copper); }
-
-    .contact-form {
-      background: linear-gradient(180deg, rgba(58,38,25,.96), rgba(32,21,14,.985));
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 14px 34px rgba(0,0,0,.28);
-    }
-    .contact-form h3 { color: var(--cream) !important; }
-
-    .tally-card {
-      background: linear-gradient(180deg, rgba(58,38,25,.96), rgba(32,21,14,.985));
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 14px 34px rgba(0,0,0,.28);
-      overflow: hidden;
-    }
-    .tally-card h3 { color: var(--cream); margin-bottom: 8px; }
-    .tally-intro { color: var(--paper-deep); margin-bottom: 14px; font-size: .95rem; }
-    .tally-frame {
-      width: 100%;
-      min-height: 760px;
-      border: 0;
-      border-radius: 10px;
-      background: transparent;
-    }
-    .tally-note { color: rgba(255,247,234,.62); margin-top: 10px; font-size: .82rem; line-height: 1.35; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .form-group { display: grid; gap: 6px; margin-bottom: 12px; }
-    label { color: var(--paper-deep); font-weight: 900; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
-    input, select, textarea {
-      width: 100%;
-      font: inherit;
-      background: rgba(255,247,234,.08);
-      color: var(--cream);
-      border: 1px solid rgba(255,247,234,.18);
-      border-radius: 8px;
-      padding: 11px 12px;
-      outline: none;
-    }
-    input::placeholder, textarea::placeholder { color: rgba(255,247,234,.48); }
-    select option { background: #26180f; color: var(--cream); }
-    input:focus, select:focus, textarea:focus { border-color: var(--copper); box-shadow: 0 0 0 3px rgba(185,119,54,.18); background: rgba(255,247,234,.11); }
-    textarea { min-height: 132px; resize: vertical; }
-    .form-submit { width: 100%; border: 0; background: var(--copper); color: #1d120a; padding: 13px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; }
-    .form-submit:hover { background: var(--ember); }
-    .form-note { margin-top: 10px; color: var(--paper-deep); text-align: center; font-size: .86rem; }
-
-    .upload-box {
-      border: 1px dashed rgba(185,119,54,.55);
-      background: rgba(255,247,234,.06);
-      border-radius: 9px;
-      padding: 12px 14px;
-      text-align: left;
-      color: var(--paper-deep);
-      cursor: pointer;
-      transition: background .15s ease, border-color .15s ease;
-      display: grid;
-      gap: 2px;
-    }
-    .upload-box:hover { background: rgba(255,247,234,.10); border-color: var(--copper); }
-    .upload-box strong { display: block; font-size: .9rem; color: var(--cream); }
-    .upload-box span { display: block; color: rgba(255,247,234,.62); font-size: .82rem; line-height: 1.32; }
-    .upload-box input { display: none; }
-    .upload-note { margin-top: 6px; color: rgba(255,247,234,.55); font-size: .78rem; line-height: 1.35; }
-
-    footer { background: #100a06; border-top: 1px solid var(--line); padding: 40px 20px 28px; color: var(--soft); }
-    .footer-inner { max-width: var(--max); margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 28px; margin-bottom: 28px; }
-    .footer-brand { color: var(--cream); font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; margin-bottom: 9px; }
-    .footer-col h4 { color: var(--cream); font-size: .96rem; margin-bottom: 10px; }
-    .footer-col a { display: block; color: var(--paper-deep); margin-bottom: 7px; font-weight: 700; }
-    .footer-col a:hover { color: var(--ember); }
-    .footer-bottom { border-top: 1px solid var(--line); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .86rem; }
-    .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
-    .disclaimer { margin-top: 14px; font-size: .78rem; color: rgba(255,247,234,.43); }
-
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .hero { min-height: auto; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { justify-self: start; max-width: 100%; }
-      .split, .quote-panel-inner, .contact-grid { grid-template-columns: 1fr; }
-      .feature-grid, .service-grid, .reviews-grid, .pricing-grid, .steps-grid, .portfolio-grid { grid-template-columns: 1fr 1fr; }
-      .case-images { grid-template-columns: 1fr 1fr; }
-      .case-images .paper-shot { display: none; }
-      .footer-top { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 620px) {
-      .top-strip-inner { align-items: center; padding: 5px 16px; }
-      .top-strip { font-size: .74rem; }
-      .top-links { display: none; }
-      .top-strip-inner span { white-space: normal; line-height: 1.25; }
-      .brand { min-width: 0; }
-      .brand img { width: 50px; height: 50px; }
-      .brand-name { font-size: .98rem; }
-      .brand-tag { display: none; }
-      .hero { padding: 44px 18px; }
-      section { padding: 44px 18px; }
-      .feature-grid, .service-grid, .reviews-grid, .pricing-grid, .steps-grid, .portfolio-grid, .stats { grid-template-columns: 1fr; }
-      .card.featured, .project-card.wide { grid-column: auto; }
-      .form-row { grid-template-columns: 1fr; }
-      .hero-cta .btn { width: 100%; }
-      .footer-bottom { flex-direction: column; }
-    }
-  
-    .nav-links a[aria-current="page"], .mobile-menu a[aria-current="page"] { color: var(--ember); background: rgba(255,255,255,.07); }
-    .nav-links a.nav-book[aria-current="page"], .mobile-menu a.nav-book[aria-current="page"] { color: #1c1109 !important; background: linear-gradient(180deg, var(--copper-light), var(--copper)); }
-    .brand:hover .brand-name { color: var(--ember); }
-
-    .skip-link {
-      position: fixed;
-      left: 12px;
-      top: 12px;
-      transform: translateY(-160%);
-      opacity: 0;
-      pointer-events: none;
-      background: var(--ember);
-      color: #1d120a;
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-weight: 900;
-      z-index: 9999;
-      box-shadow: 0 8px 22px rgba(0,0,0,.28);
-      transition: transform .12s ease, opacity .12s ease;
-    }
-    .skip-link:focus, .skip-link:focus-visible {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-      outline: 2px solid var(--cream);
-      outline-offset: 3px;
-    }
-    .discount-highlight {
-      margin-top: 20px;
-      background: linear-gradient(180deg, rgba(58,38,25,.92), rgba(36,24,17,.96));
-      border: 1px solid var(--line);
-      border-left: 5px solid var(--copper);
-      border-radius: 10px;
-      padding: 22px 24px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.14);
-    }
-    .discount-highlight h2 {
-      margin: 0 0 18px;
-      color: var(--cream);
-    }
-    .save-options {
-      display: grid;
-      grid-template-columns: .85fr 1.35fr;
-      gap: 26px;
-      align-items: start;
-    }
-    .save-option { padding: 0; }
-    .save-option + .save-option {
-      border-left: 1px solid rgba(240,183,104,.18);
-      padding-left: 26px;
-    }
-    .save-option h3 { margin: 0 0 8px; color: var(--cream); }
-    .save-option p { margin: 7px 0 0; color: var(--paper-deep); }
-    .flex-steps {
-      margin: 9px 0 0 20px;
-      color: var(--paper-deep);
-    }
-    .flex-steps li { margin: 5px 0; padding-left: 3px; }
-    .save-stack {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(240,183,104,.16);
-      color: var(--paper-deep);
-    }
-    @media (max-width:620px) {
-      .discount-highlight { padding: 20px 18px; }
-      .save-options { grid-template-columns: 1fr; gap: 18px; }
-      .save-option + .save-option {
-        border-left: 0;
-        border-top: 1px solid rgba(240,183,104,.18);
-        padding-left: 0;
-        padding-top: 18px;
-      }
-    }
-
-
-</style>
-<meta content="index, follow" name="robots"/><meta content="Furniture Assembly &amp; Remote Move-In Setup | Anderson Home Services" property="og:title"/><meta content="Furniture assembly, remote move-in setup before arrival, full-day home setup, moving help, reassembly, and hauling across Washington DC and the DMV." property="og:description"/><meta content="website" property="og:type"/><meta content="https://andersonhomeservicesdmv.com/services" property="og:url"/><meta content="en_US" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/>
+<link rel="stylesheet" href="assets/site.css?v=91f1ae1774"/>
+<meta content="index, follow" name="robots"/><meta content="Furniture Assembly &amp; Move-In Services | Anderson Home Services" property="og:title"/><meta content="Furniture assembly, full-apartment setup and light home work in DC, Northern Virginia &amp; Montgomery County, MD. $60/hr, fixed quotes and a $750 Full Day Package." property="og:description"/><meta content="website" property="og:type"/><meta content="https://andersonhomeservicesdmv.com/services" property="og:url"/><meta content="en_US" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/>
 <meta property="og:image" content="https://andersonhomeservicesdmv.com/assets/social-card.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta name="twitter:image" content="https://andersonhomeservicesdmv.com/assets/social-card.png"/><link href="https://andersonhomeservicesdmv.com/services" rel="canonical"/><meta content="Furniture Assembly &amp; Remote Move-In Setup | Anderson Home Services" name="twitter:title"/><meta content="Furniture assembly, remote move-in setup before arrival, full-day home setup, moving help, reassembly, and hauling across Washington DC and the DMV." name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Anderson Home Services","alternateName":"Anderson Home DMV","url":"https://andersonhomeservicesdmv.com/","telephone":"+1-218-235-3924","email":"caleb1223@gmail.com","founder":{"@type":"Person","name":"Caleb Anderson","sameAs":"https://www.linkedin.com/in/caleb1223/"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"],"serviceArea":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","address":"Arlington, VA"}},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Sunday"],"opens":"11:00","closes":"23:59"}],"priceRange":"$$","serviceType":["Furniture Assembly","IKEA Furniture Assembly","Move-In Setup","Remote Move-In Setup","Apartment Furniture Setup","Furniture Reassembly","Moving Help","Hauling"],"description":"Furniture assembly, move-in setup, including remote apartment setup before arrival, reassembly, hauling, and practical home help across Washington DC, Northern Virginia, and Montgomery County, MD.","sameAs":["https://www.taskrabbit.com/r/profile/caleb1223","https://www.linkedin.com/in/caleb1223/","https://www.google.com/maps/place/Anderson+Home+Services/@38.9290961,-77.2108355,11.24z/data=!4m18!1m9!3m8!1s0x2713ac409f9a4897:0xeb257711c4454a1e!2sAnderson+Home+Services!8m2!3d38.9038394!4d-77.1221009!9m1!1b1!16s%2Fg%2F11z93sndqy!3m7!1s0x2713ac409f9a4897:0xeb257711c4454a1e!8m2!3d38.9038394!4d-77.1221009!9m1!1b1!16s%2Fg%2F11z93sndqy?hl=en&entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"]}</script>
+<meta name="twitter:image" content="https://andersonhomeservicesdmv.com/assets/social-card.png"/><link href="https://andersonhomeservicesdmv.com/services" rel="canonical"/><meta content="Furniture Assembly &amp; Move-In Services | Anderson Home Services" name="twitter:title"/><meta content="Furniture assembly, full-apartment setup and light home work in DC, Northern Virginia &amp; Montgomery County, MD. $60/hr, fixed quotes and a $750 Full Day Package." name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","name":"Anderson Home Services","alternateName":"Anderson Home DMV","url":"https://andersonhomeservicesdmv.com/","telephone":"+1-218-235-3924","email":"caleb1223@gmail.com","founder":{"@type":"Person","name":"Caleb Anderson","sameAs":"https://www.linkedin.com/in/caleb1223/"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Sunday"],"opens":"11:00","closes":"00:00"}],"priceRange":"$$","description":"Furniture assembly, multi-item and remote move-in setup, furniture reassembly, and light home work across Washington DC, Northern Virginia, and Montgomery County, MD.","sameAs":["https://www.taskrabbit.com/profile/caleb1223","https://www.linkedin.com/in/caleb1223/","https://www.google.com/maps?cid=16944080091242383902"],"@id":"https://andersonhomeservicesdmv.com/#business","image":"https://andersonhomeservicesdmv.com/assets/social-card.png","logo":"https://andersonhomeservicesdmv.com/assets/logo.png"},{"@type":"Service","@id":"https://andersonhomeservicesdmv.com/services#furniture-assembly","name":"Furniture assembly","serviceType":"Furniture assembly","description":"Assembly of beds, dressers, desks, tables, shelving and wardrobe systems from IKEA, Wayfair and other brands, from one item to multi-room orders.","url":"https://andersonhomeservicesdmv.com/services#furniture-assembly","provider":{"@id":"https://andersonhomeservicesdmv.com/#business"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"]},{"@type":"Service","@id":"https://andersonhomeservicesdmv.com/services#move-in-setup","name":"Move-in and multi-item furniture setup","serviceType":"Move-in and multi-item furniture setup","description":"New apartment and home furniture setup, including remote assembly before arrival when deliveries and access are arranged.","url":"https://andersonhomeservicesdmv.com/services#move-in-setup","provider":{"@id":"https://andersonhomeservicesdmv.com/#business"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"]},{"@type":"Service","@id":"https://andersonhomeservicesdmv.com/services#light-home-work","name":"Light home work","serviceType":"Light home work","description":"Picture hanging on standard walls, small furniture fixes, basic IT setup, yard help and practical home tasks, subject to scope review.","url":"https://andersonhomeservicesdmv.com/services#light-home-work","provider":{"@id":"https://andersonhomeservicesdmv.com/#business"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"]},{"@type":"Service","@id":"https://andersonhomeservicesdmv.com/services#tv-mounting","name":"TV mounting on drywall","serviceType":"TV mounting on drywall","description":"TV mounting on drywall walls only, subject to review of the TV, mount, and wall before booking.","url":"https://andersonhomeservicesdmv.com/services#tv-mounting","provider":{"@id":"https://andersonhomeservicesdmv.com/#business"},"areaServed":["Washington, DC","Arlington, VA","Alexandria, VA","Fairfax County, VA","Reston, VA","Tysons, VA","Falls Church, VA","Springfield, VA","McLean, VA","Vienna, VA","Herndon, VA","Burke, VA","Chantilly, VA","Great Falls, VA","Oakton, VA","Clifton, VA","Montgomery County, MD","Bethesda, MD","Silver Spring, MD","Rockville, MD","Potomac, MD","North Bethesda, MD","Chevy Chase, MD","Kensington, MD","Gaithersburg, MD","Olney, MD","Hyattsville, MD"]}]}</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
 <meta name="theme-color" content="#17100b"/>
+<meta property="og:site_name" content="Anderson Home Services"/>
+<meta property="og:image:alt" content="Anderson Home Services — furniture assembly and move-in setup"/>
+<link rel="stylesheet" href="assets/preferences.css"/>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -809,7 +49,7 @@
 <li><a href="about.html">About Caleb</a></li>
 <li><a class="nav-book" href="contact.html">Get Started</a></li>
 </ul>
-<button aria-label="Open menu" class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+<button type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" class="hamburger"><span></span><span></span><span></span></button>
 </div>
 <div class="mobile-menu" id="mobileMenu">
 <a href="index.html">Home</a>
@@ -826,18 +66,19 @@
 <div class="section-inner">
 <div class="section-head">
 <div class="section-label">Services</div>
-<h1 class="section-title">From one piece of furniture to a more livable home.</h1>
-<p class="section-subtitle">I handle straightforward assembly jobs, larger multi-item projects, remote move-in setup, and practical home help like hauling, disassembly, reassembly, and move-in support.</p>
+<h1 class="section-title">Furniture assembly, move-in setup &amp; light home help.</h1>
+<p class="section-subtitle">Based in Arlington, I help clients across Washington DC, Northern Virginia, and Montgomery County, MD assemble furniture and get settled after a move. From a single item to a full apartment furniture order, send the complete list so I can plan the time and scope together.</p>
 </div>
 <div class="service-grid">
-<div class="card featured"><span class="badge">Most popular for large jobs</span><h3>Full Day Package — $750 Flat Rate</h3><p>Best for large projects where you want one predictable day and one predictable price: move-ins, multiple rooms, full furniture orders, or a long list of home setup tasks. This blocks the day for your project and can run well into the evening when needed. Requires 50% deposit.</p></div>
-<div class="card"><div class="icon">🔩</div><h3>Furniture Assembly</h3><p>IKEA, Wayfair, West Elm, Williams-Sonoma, Target, Walmart, Amazon, and more. Small items to large systems.</p></div>
+<div class="card featured"><span class="badge">Best value for a full day</span><h3>Full Day Package — $750 Flat Rate</h3><p>Best for large projects where you want one predictable day and one predictable price: move-ins, multiple rooms, full furniture orders, or a long list of home setup tasks. This blocks the day for your project and can run well into the evening when needed. Requires 50% deposit.</p></div>
+<div class="card" id="furniture-assembly"><div class="icon">🔩</div><h3>Furniture Assembly</h3><p>Beds, dressers, desks, tables, shelving, and wardrobe systems from IKEA, Wayfair, West Elm, Williams-Sonoma, Target, Walmart, Amazon, and more. I can assemble a single item or work through a multi-room furniture order.</p></div>
 <div class="card"><div class="icon">🔨</div><h3>Furniture Repair</h3><p>Wobbly doors, loose joints, stuck drawers, and similar practical fixes. If I can’t fix it, you pay $0.</p></div>
 <div class="card"><div class="icon">🚚</div><h3>Moving Help</h3><p>DIY-level moving help with dollies. I can also rent and drive a U-Haul on request for the right job.</p></div>
-<div class="card"><div class="icon">🔄</div><h3>Disassembly &amp; Reassembly</h3><p>Useful when furniture needs to move rooms, fit through tight spaces, are used or need to move between rooms, or survive a move without being forced.</p></div>
+<div class="card"><div class="icon">🔄</div><h3>Disassembly &amp; Reassembly</h3><p>Take apart and rebuild furniture for a move, a room change, or a secondhand purchase. Send photos and item details so I can assess the condition and plan for any missing hardware.</p></div>
 <div class="card"><div class="icon">🚐</div><h3>Hauling</h3><p>I use a 2003 Chevy Suburban for furniture, cardboard, and project-related trash. No hazardous items or general household waste.</p><p class="service-note">Need the Suburban for hauling or transport? Mention it when booking — I often travel by Metro or moped and may not have the truck without advance notice.</p></div>
 <div class="card"><div class="icon">🏢</div><h3>Office &amp; Government Setup</h3><p>Furniture assembly and workspace setup for commercial and government settings. Federal registration through SAM.gov. UEID: P72CSHQSMPN7. CAGE: 22ZD2.</p></div>
-<div class="card"><div class="icon">🛠️</div><h3>Other Projects</h3><p>Basic IT setup, light mounting, yard help, and odd projects. If you're unsure just reach out and I can let you know if it's in my skillset!</p></div>
+<div class="card" id="tv-mounting"><div class="icon">📺</div><h3>TV Mounting — Drywall Only</h3><p>I mount TVs on drywall walls only. Send the TV size, mount details, and a photo of the wall so I can review the setup before booking. Plaster, brick, concrete, and ceiling mounts are outside my scope.</p></div>
+<div class="card" id="light-home-work"><div class="icon">🛠️</div><h3>Light Home Work</h3><p>Picture hanging on standard walls, small furniture fixes, basic IT setup, yard help, and other practical tasks. Include these in your project list and I’ll let you know what I can handle.</p></div>
 </div>
 </div>
 </section>
@@ -845,15 +86,16 @@
 <div class="section-inner">
 <div class="section-head">
 <div class="section-label">Examples</div>
-<h2 class="section-title">A few ways I can help.</h2>
-<p class="section-subtitle">Projects can be as small as one item or as involved as getting a new apartment ready before you arrive.</p>
+<h2 class="section-title" id="move-in-setup">Furniture assembly for move-ins and larger projects.</h2>
+<p class="section-subtitle">Just moved in with boxes in every room? I can help assemble new purchases, reassemble furniture from your previous home, and handle the setup tasks on your list. Send item links, quantities, your location, and your move-in date; I’ll help estimate the scope and discuss hourly work, a fixed quote, or the Full Day Package.</p>
 </div>
 <div class="service-grid">
-<div class="card featured"><span class="badge">Remote move-in setup</span><h3>Turn the key to a furnished apartment</h3><p>Moving to the DMV? You can order furniture to your apartment ahead of time and arrange remote access. I can assemble your items, break down and remove trash and boxes, and have the space ready to live in before your arrival!</p></div>
-<div class="card"><div class="icon">🔩</div><h3>Furniture assembly</h3><p>From a single dresser, bed, or desk to a roomful of furniture, I can handle everyday assembly projects of all sizes.</p></div>
+<div class="card featured"><span class="badge">Remote move-in setup</span><h3>Turn the key to a furnished apartment</h3><p>Moving to the DMV before you can be here in person? With deliveries and access arranged, I can assemble your furniture and break down and remove project boxes before you arrive. We’ll confirm the item list, building access, and what can be completed in the time available.</p></div>
+<div class="card"><div class="icon">🔩</div><h3>Multiple rooms, one project list</h3><p>Beds and dressers for the bedrooms, a table for the dining area, and desks or shelving for a home office. Share the complete order so I can plan the work across rooms.</p></div>
 <div class="card"><div class="icon">🚚</div><h3>Loading &amp; unloading help</h3><p>If you need another set of hands loading or unloading a U-Haul, I can help with the physical work.</p></div>
 <div class="card"><div class="icon">🖼️</div><h3>Light mounting</h3><p>I can hang pictures and handle other straightforward mounting on standard walls.</p></div>
 </div>
+<p class="section-subtitle"><a href="portfolio.html" style="color:var(--ember);font-weight:900;">See furniture assembly and reassembly projects</a> or <a href="areas.html" style="color:var(--ember);font-weight:900;">check your service area</a>.</p>
 <div class="pricing-note" style="margin-top:16px;">
 <p style="color:var(--paper-deep);">For moves, I have a dolly and a Suburban and can help with loading, unloading, and smaller transport needs, but I am not a full-service moving company. I do not mount TVs or drill into concrete or plaster walls; for those projects I can point you toward a specialist.</p>
 </div>
@@ -864,19 +106,19 @@
 <div class="section-head">
 <div class="section-label">Pricing</div>
 <h2 class="section-title">Transparent and honest pricing.</h2>
-<p class="section-subtitle">My standard rate is $60/hr. Fixed quotes are available on request for projects with a clear scope.</p>
+<p class="section-subtitle">My standard rate is $60/hr. Fixed quotes are available on request for projects with a clear scope. Have an assembly quote from IKEA, Wayfair, or another provider? <a href="policies.html#price-matching" style="color:var(--ember);font-weight:900;">Ask about price matching</a>; matches are considered case by case and are not guaranteed.</p>
 </div>
 <div class="pricing-grid">
 <div class="card featured"><h3>Hourly Rate</h3><div class="price-num">$60</div><div class="price-sub" style="color:var(--paper-deep);">per hour · 1hr minimum</div><p>The standard way I bill for most projects. Send the details first and I can estimate the time involved before you book.</p></div>
 <div class="card"><h3>Fixed Quote</h3><div class="price-num">Fixed</div><div class="price-sub">available on request</div><p>If you prefer a promised total price, ask for a fixed quote. Once quoted, the agreed project scope stays at that price; additions are billed separately.</p></div>
-<div class="card" id="full-day"><h3>Full Day Package</h3><div class="price-num">$750</div><div class="price-sub">flat rate · deposit required</div><p>Best for large moves, full-home furnishings, or big projects. One price for one project day.</p></div>
+<div class="card" id="full-day"><h3>Full Day Package</h3><div class="price-num">$750</div><div class="price-sub">flat rate · deposit required</div><p>Best value for a full day of furniture assembly, move-in setup, or a long project list. One flat price for the project day.</p></div>
 </div>
 <div class="discount-highlight" id="ways-to-save">
 <h2>Have a flexible schedule? Save up to $20/hr.</h2>
 <div class="save-options">
 <div class="save-option">
 <h3>🌙 Night Owl · $10/hr off</h3>
-<p>Start at 8pm or later and receive $10/hr off.</p>
+<p>Receive $10/hr off hourly work performed from 8pm onward, even if the appointment starts earlier. For example, a 7–9pm job is $60 for 7–8pm and $50 for 8–9pm: $110 in labor before any other discount.</p>
 </div>
 <div class="save-option">
 <h3>🕒 Flex Start · $10/hr off</h3>
@@ -888,7 +130,7 @@
 <p>Prefer not to start at night? You can opt out of an 8pm-or-later Flex Start. Otherwise, evening starts may be likely when they help fill a gap in my schedule.</p>
 </div>
 </div>
-<p class="save-stack"><strong>Stack them:</strong> If a Flex Start also begins at 8pm or later, both discounts apply for a total of $20/hr off.</p>
+<p class="save-stack"><strong>Stack them:</strong> On a Flex Start appointment, the rate is $50/hr before 8pm and $40/hr for time worked from 8pm onward. Night Owl applies to the evening portion, not the entire appointment.</p>
 </div>
 </div>
 </section>
@@ -912,7 +154,7 @@
 <div class="footer-top">
 <div><div class="footer-brand">Anderson Home Services</div><p>Furniture assembly and move-in setup serving Washington DC, Northern Virginia, and Montgomery County, MD. From a single item to a full home — practical help, done carefully.</p></div>
 <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html">About Caleb</a><a href="faqs.html">FAQs</a><a href="policies.html">Policies &amp; Safety</a><a href="contact.html">Get Started</a><a href="areas.html">Service Areas</a></div>
-<div class="footer-col"><h4>Contact</h4><a href="tel:+12182353924">+1 (218) 235-3924</a><a href="mailto:caleb1223@gmail.com">caleb1223@gmail.com</a><a href="https://www.taskrabbit.com/r/profile/caleb1223" target="_blank">TaskRabbit Profile</a><a href="https://www.linkedin.com/in/caleb1223/" target="_blank">Caleb on LinkedIn</a></div>
+<div class="footer-col"><h4>Contact</h4><a href="tel:+12182353924">+1 (218) 235-3924</a><a href="mailto:caleb1223@gmail.com">caleb1223@gmail.com</a><a href="https://www.taskrabbit.com/profile/caleb1223" target="_blank">TaskRabbit Profile</a><a href="https://www.linkedin.com/in/caleb1223/" target="_blank">Caleb on LinkedIn</a></div>
 </div>
 <div class="footer-bottom"><span>© 2026 Anderson Home Services · Arlington, Virginia</span><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="accessibility.html">Accessibility</a><a href="policies.html">Policies &amp; Safety</a></div></div>
 <p class="disclaimer">TaskRabbit is a third-party platform and does not endorse or sponsor this website or its content. I operate independently and do not represent TaskRabbit.</p>
@@ -920,10 +162,7 @@
 </footer>
 </div>
 
-<script>
-  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
-  function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
-</script>
+
+<script src="assets/site.js" defer></script>
 </body>
 </html>
