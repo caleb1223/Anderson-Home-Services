@@ -16,7 +16,7 @@ Google Analytics and its consent interface were removed at the owner’s request
 
 ## Publishing
 
-Cloudflare Pages project: `andersonhomeservices`; production branch: `main`; custom domain: https://andersonhomeservicesdmv.com . Publish only top-level HTML, robots.txt, sitemap.xml, and assets/. Never publish tests, node_modules, documentation, credentials, or customer records. Keep a pre-release snapshot outside the public files. Run checks, upload only the public allowlist, then verify the production URL and privacy controls. Roll back by selecting a previously successful production deployment in Cloudflare Pages.
+Cloudflare Pages project: `andersonhomeservices-github`; production branch: `main`; custom domain: https://andersonhomeservicesdmv.com . Get Caleb's approval before publishing. Push the tested, approved commit to main; Cloudflare builds it with `node scripts/build-public.mjs` and publishes only dist/. Do not upload a separate uncommitted website copy. Never publish tests, node_modules, documentation, credentials, or customer records. Verify the production commit and URL after release. See docs/PUBLISHING.md for the full workflow and rollback notes.
 
 ## Policy review
 

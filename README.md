@@ -23,11 +23,11 @@ The Git history was reconstructed in September 2026 from saved HTML files and ZI
 
 ## Live deployment and publishing
 
-The latest verified production deployment is **ac458254-c54e-48d1-aca1-cd7b310ccea7**. All 37 public files were compared byte-for-byte with that deployment before this repository was prepared. [Deployment record and file hashes](docs/DEPLOYMENT.json).
+Cloudflare Pages project **andersonhomeservices-github** is connected to this repository's **main** branch. An approved push to main automatically builds and deploys the live website. Work on a separate branch and ask Caleb before publishing; see [release instructions](docs/PUBLISHING.md) and [agent instructions](AGENTS.md).
 
-At verification, Cloudflare Pages project **andersonhomeservices** used direct uploads, with no Git source configured. Its production branch label was **main**. This repository has no automatic publishing workflow. Preparing or pushing this history does not itself request a Cloudflare deployment. Recheck Cloudflare settings before future pushes if integrations change.
+The build runs `node scripts/build-public.mjs` and publishes only `dist/`. Repository documentation, tests, dependencies, and Git history are excluded from the public website. The original Direct Upload project, **andersonhomeservices**, is retained for rollback.
 
-Publish only the public HTML files, assets directory, robots.txt, and sitemap.xml when explicitly choosing to release a website update. Never upload this entire repository, test dependencies, or private customer records as the public site.
+The 37 public files at migration were byte-for-byte identical to the original production deployment **ac458254-c54e-48d1-aca1-cd7b310ccea7**. [Original deployment record and file hashes](docs/DEPLOYMENT.json). Subsequent deployment commits and status are visible in Cloudflare and GitHub.
 
 ## Local use and checks
 
