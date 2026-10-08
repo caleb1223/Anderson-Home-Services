@@ -44,7 +44,15 @@ test('all pages: content, links, assets, metadata, structured hours and mobile o
     assert.equal(canonical, 'https://andersonhomeservicesdmv.com/' + (file === 'index.html' ? '' : file.replace('.html', '')));
     const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
     const business = schemas.flatMap(text => { const data = JSON.parse(text); return data['@graph'] || [data]; }).find(data => data['@type'] === 'LocalBusiness');
-    assert.deepEqual(business.openingHoursSpecification, [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Sunday'], opens: '11:00', closes: '00:00' }]);
+    assert.deepEqual(business.openingHoursSpecification, [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Sunday','Monday','Tuesday'], opens: '11:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Wednesday','Thursday'], opens: '17:30', closes: '00:00' }
+    ]);
+    assert.deepEqual(business.specialOpeningHoursSpecification, [
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-11', validThrough: '2026-10-11', opens: '00:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-13', validThrough: '2026-10-13', opens: '17:30', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-15', validThrough: '2026-10-15', opens: '11:00', closes: '00:00' }
+    ]);
     const refs = await page.locator('[href], img[src], script[src]').evaluateAll(nodes => nodes.map(n => n.getAttribute('href') || n.getAttribute('src')));
     for (const ref of refs) {
       if (!ref || /^(https?:|mailto:|sms:|tel:|data:)/.test(ref)) continue;
@@ -99,6 +107,53 @@ test('Tally script failure sets iframe source and leaves direct contact availabl
   assert.ok(await page.locator('.tally-note a[href^="mailto:"]').isVisible());
   await context.close();
 });
+test('mobile inquiries show pricing first and discount details work with a keyboard', async () => {
+  const { context, page } = await offlinePage({ viewport: { width: 375, height: 800 } });
+  await page.goto(base + '/index.html');
+  await page.locator('header .hero-cta a[href^="contact.html"]').click();
+  assert.equal(new URL(page.url()).hash, '#contact-info');
+  const info = page.locator('#contact-info');
+  assert.ok(await info.isVisible());
+  assert.match(await info.innerText(), /one-hour minimum/);
+  assert.ok(await page.evaluate(() =>
+    document.getElementById('contact-info').getBoundingClientRect().bottom <=
+      document.querySelector('.tally-card').getBoundingClientRect().top
+  ), 'information precedes the form on mobile');
+  for (const file of pages) {
+    await page.goto(base + '/' + file);
+    assert.equal(await page.locator('a[href^="tel:"], a[href*="wa.me"], a[href*="api.whatsapp.com"]').count(), 0, file);
+  }
+  await page.goto(base + '/services.html');
+  const discounts = page.locator('#ways-to-save details');
+  assert.equal(await discounts.getAttribute('open'), null);
+  await discounts.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  assert.ok(await discounts.locator('.faq-a').isVisible());
+  await page.keyboard.press('Space');
+  assert.equal(await discounts.getAttribute('open'), null);
+  await context.close();
+});
+
+test('upcoming hours use Eastern dates, one-off closures and a rolling next week', async () => {
+  const { context, page } = await offlinePage({ timezoneId: 'Asia/Tokyo' });
+  await page.clock.setFixedTime(new Date('2026-10-09T02:00:00Z'));
+  await page.goto(base + '/contact.html#upcoming-hours');
+  assert.equal(await page.locator('#upcoming-hours').getAttribute('open'), '');
+  const rows = page.locator('#operating-schedule li');
+  assert.equal(await rows.count(), 3);
+  assert.match(await page.locator('#schedule-range').innerText(), /October 8, 2026 – October 18, 2026/);
+  assert.match(await page.locator('[data-date="2026-10-11"]').innerText(), /Closed$/);
+  assert.match(await page.locator('[data-date="2026-10-13"]').innerText(), /5:30pm–midnight/);
+  assert.match(await page.locator('[data-date="2026-10-15"]').innerText(), /11am–midnight/);
+  assert.equal(await page.locator('[data-date="2026-10-14"]').count(), 0);
+  await page.clock.setFixedTime(new Date('2026-11-02T16:00:00Z'));
+  await page.reload();
+  assert.match(await page.locator('#schedule-range').innerText(), /November 2, 2026 – November 15, 2026/);
+  assert.equal(await rows.innerText(), 'No changes to my typical hours.');
+  assert.equal(await page.locator('[data-date="2026-10-11"]').count(), 0);
+  await context.close();
+});
+
 test('live Tally form renders without submitting', { skip: !process.env.TEST_LIVE_FORM }, async () => {
   const page = await browser.newPage();
   await page.goto(base + '/contact.html');

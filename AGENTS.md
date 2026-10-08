@@ -2,6 +2,8 @@
 
 - This Git repository is the authoritative source for future website development. Old ZIP exports and the original local website folder are historical references.
 - Preserve the owner's visual design and original image quality unless a requested change requires otherwise.
+- Whenever a policy's content changes, update that policy's visible effective date to the revision date.
+- Typical hours stay unchanged unless Caleb explicitly changes them. Maintain dated exceptions separately in the contact page's data-hours-exceptions and LocalBusiness specialOpeningHoursSpecification on every page. The contact schedule rolls through the end of the following week in America/New_York time; one-off closures must not change recurring hours.
 - Do not add analytics, advertising trackers, or consent popups without explicit approval.
 - Prepare changes on a working branch. Run the relevant tests and `node scripts/build-public.mjs` before release.
 - Ask Caleb for explicit approval before pushing or merging changes to `main`, triggering a production deployment, or changing the production domain. Approval to edit is not approval to publish. A clear current instruction to deploy is sufficient for that release only.
