@@ -137,37 +137,51 @@ test('mobile inquiries show pricing first and discount details work with a keybo
   await context.close();
 });
 
-test('upcoming hours use Eastern dates, one-off closures and a rolling next week', async () => {
+test('schedule groups closures and uses four- and twelve-week windows in Eastern time', async () => {
   const { context, page } = await offlinePage({ timezoneId: 'Asia/Tokyo' });
-  await page.clock.setFixedTime(new Date('2026-10-09T02:00:00Z'));
-  await page.goto(base + '/contact.html#upcoming-hours');
+  const visit = async (instant) => {
+    await page.clock.setFixedTime(new Date(instant));
+    await page.goto(base + '/contact.html?testDate=' + encodeURIComponent(instant) + '#upcoming-hours');
+  };
+  await visit('2026-10-17T02:00:00Z'); // Still October 16 in Eastern time.
   assert.equal(await page.locator('#upcoming-hours').getAttribute('open'), '');
-  const rows = page.locator('#operating-schedule li');
+  const rows = page.locator('#operating-schedule li[data-date]');
   assert.equal(await rows.count(), 3);
-  assert.match(await page.locator('#schedule-range').innerText(), /October 8, 2026 – October 18, 2026/);
-  assert.match(await page.locator('[data-date="2026-10-11"]').innerText(), /Closed$/);
-  assert.match(await page.locator('[data-date="2026-10-13"]').innerText(), /5:30pm–midnight/);
-  assert.match(await page.locator('[data-date="2026-10-15"]').innerText(), /11am–midnight/);
-  assert.equal(await page.locator('[data-date="2026-10-14"]').count(), 0);
-  await page.clock.setFixedTime(new Date('2026-10-19T16:00:00Z'));
-  await page.reload();
   assert.match(await page.locator('[data-date="2026-10-19"]').innerText(), /Closed$/);
   assert.match(await page.locator('[data-date="2026-10-26"]').innerText(), /Closed$/);
-  await page.clock.setFixedTime(new Date('2026-12-20T16:00:00Z'));
-  await page.reload();
-  assert.match(await page.locator('[data-date="2026-12-20"]').innerText(), /Closed$/);
-  await page.clock.setFixedTime(new Date('2026-12-28T16:00:00Z'));
-  await page.reload();
-  assert.match(await page.locator('[data-date="2027-01-03"]').innerText(), /Closed$/);
-  assert.equal(await page.locator('[data-date="2027-01-04"]').count(), 0);
-  await page.clock.setFixedTime(new Date('2027-01-04T16:00:00Z'));
-  await page.reload();
-  assert.equal(await rows.innerText(), 'No changes to my typical hours.');
-  await page.clock.setFixedTime(new Date('2026-11-02T16:00:00Z'));
-  await page.reload();
-  assert.match(await page.locator('#schedule-range').innerText(), /November 2, 2026 – November 15, 2026/);
-  assert.equal(await rows.innerText(), 'No changes to my typical hours.');
-  assert.equal(await page.locator('[data-date="2026-10-11"]').count(), 0);
+  const holiday = page.locator('[data-date="2026-12-20"]');
+  assert.equal(await holiday.getAttribute('data-end-date'), '2027-01-03');
+  assert.match(await holiday.innerText(), /Dec 20, 2026 – Jan 3, 2027/);
+  // 29 vs. 28 days before a one-day closure.
+  await visit('2026-09-20T16:00:00Z');
+  assert.equal(await page.locator('[data-date="2026-10-19"]').count(), 0);
+  await visit('2026-09-21T16:00:00Z');
+  assert.equal(await page.locator('[data-date="2026-10-19"]').count(), 1);
+  // 85 vs. 84 days before the long break, including an Eastern date boundary.
+  await visit('2026-09-27T02:00:00Z');
+  assert.equal(await holiday.count(), 0);
+  await visit('2026-09-27T16:00:00Z');
+  assert.equal(await holiday.count(), 1);
+  await visit('2027-01-03T16:00:00Z');
+  assert.equal(await holiday.count(), 1); // Still the same long block on its last day.
+  await visit('2027-01-04T16:00:00Z');
+  assert.equal(await rows.count(), 0);
+  assert.equal(await page.locator('#operating-schedule').innerText(), 'No upcoming schedule changes to show.');
+
+  // A two-day break uses the short window; a three-day break uses the long one.
+  const html = (await fs.readFile(path.join(root, 'contact.html'), 'utf8')).replace(
+    /data-hours-exceptions='[^']*'/,
+    "data-hours-exceptions='" + JSON.stringify({
+      '2026-11-02': 'Closed', '2026-11-03': 'Closed',
+      '2026-11-09': 'Closed', '2026-11-10': 'Closed', '2026-11-11': 'Closed'
+    }) + "'"
+  );
+  await context.route('**/contact.html?**', route => route.fulfill({ contentType: 'text/html', body: html }));
+  await visit('2026-09-21T16:00:00Z');
+  assert.equal(await page.locator('[data-date="2026-11-02"]').count(), 0); // Six weeks away.
+  assert.equal(await page.locator('[data-date="2026-11-09"]').count(), 1);
+  await visit('2026-10-05T16:00:00Z');
+  assert.equal(await page.locator('[data-date="2026-11-02"]').getAttribute('data-end-date'), '2026-11-03');
   await context.close();
 });
 

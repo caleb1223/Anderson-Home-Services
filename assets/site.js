@@ -27,7 +27,7 @@ document.querySelectorAll('.hamburger[aria-controls]').forEach((button) => {
   });
 });
 
-// Show only changes to typical hours through the end of the following week.
+// Short closures and adjusted hours appear 4 weeks ahead; 3+ day breaks, 12 weeks.
 // UTC dates below represent calendar days, avoiding daylight-saving arithmetic.
 const schedule = document.getElementById('operating-schedule');
 if (schedule) {
@@ -38,30 +38,48 @@ if (schedule) {
   }).formatToParts(new Date());
   const part = (name) => eastern.find(p => p.type === name).value;
   const today = new Date(`${part('year')}-${part('month')}-${part('day')}T00:00:00Z`);
-  const end = new Date(today);
-  end.setUTCDate(end.getUTCDate() + (7 - today.getUTCDay()) % 7 + 7);
+  const dayMs = 24 * 60 * 60 * 1000;
   const label = new Intl.DateTimeFormat('en-US', {
     timeZone: 'UTC', weekday: 'short', month: 'short', day: 'numeric'
   });
   const range = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric'
+    timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric'
   });
-  document.getElementById('schedule-range').textContent =
-    `${range.format(today)} – ${range.format(end)} · Eastern time`;
+  document.getElementById('schedule-range').textContent = 'Eastern time';
+  // Group before filtering: a long break remains one block even near its end.
+  const blocks = [];
+  for (const date of Object.keys(exceptions).sort()) {
+    const day = new Date(`${date}T00:00:00Z`);
+    const previous = blocks.at(-1);
+    if (exceptions[date] === 'Closed' && previous?.hours === 'Closed' &&
+        day.getTime() - previous.end.getTime() === dayMs) {
+      previous.end = day;
+    } else {
+      blocks.push({ start: day, end: day, hours: exceptions[date] });
+    }
+  }
   schedule.replaceChildren();
-  for (const day = new Date(today); day <= end; day.setUTCDate(day.getUTCDate() + 1)) {
-    const date = day.toISOString().slice(0, 10);
-    if (!Object.hasOwn(exceptions, date) || exceptions[date] === weekly[day.getUTCDay()]) continue;
+  for (const block of blocks) {
+    const days = (block.end - block.start) / dayMs + 1;
+    const horizon = days >= 3 ? 84 : 28;
+    if (block.end < today || block.start - today > horizon * dayMs) continue;
+    let changesTypicalHours = false;
+    for (let day = Math.max(block.start.getTime(), today.getTime()); day <= block.end.getTime(); day += dayMs) {
+      if (block.hours !== weekly[new Date(day).getUTCDay()]) changesTypicalHours = true;
+    }
+    if (!changesTypicalHours) continue;
     const row = document.createElement('li');
     const heading = document.createElement('strong');
-    heading.textContent = `${label.format(day)}: `;
-    row.dataset.date = date;
-    row.append(heading, exceptions[date]);
+    heading.textContent = days === 1 ? `${label.format(block.start)}: ` :
+      `${range.format(block.start)} – ${range.format(block.end)}: `;
+    row.dataset.date = block.start.toISOString().slice(0, 10);
+    row.dataset.endDate = block.end.toISOString().slice(0, 10);
+    row.append(heading, block.hours);
     schedule.append(row);
   }
   if (!schedule.children.length) {
     const row = document.createElement('li');
-    row.textContent = 'No changes to my typical hours.';
+    row.textContent = 'No upcoming schedule changes to show.';
     schedule.append(row);
   }
   const disclosure = document.getElementById('upcoming-hours');
