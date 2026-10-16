@@ -51,7 +51,10 @@ test('all pages: content, links, assets, metadata, structured hours and mobile o
     assert.deepEqual(business.specialOpeningHoursSpecification, [
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-11', validThrough: '2026-10-11', opens: '00:00', closes: '00:00' },
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-13', validThrough: '2026-10-13', opens: '17:30', closes: '00:00' },
-      { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-15', validThrough: '2026-10-15', opens: '11:00', closes: '00:00' }
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-15', validThrough: '2026-10-15', opens: '11:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-19', validThrough: '2026-10-19', opens: '00:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-26', validThrough: '2026-10-26', opens: '00:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-12-20', validThrough: '2027-01-03', opens: '00:00', closes: '00:00' }
     ]);
     const refs = await page.locator('[href], img[src], script[src]').evaluateAll(nodes => nodes.map(n => n.getAttribute('href') || n.getAttribute('src')));
     for (const ref of refs) {
@@ -146,6 +149,20 @@ test('upcoming hours use Eastern dates, one-off closures and a rolling next week
   assert.match(await page.locator('[data-date="2026-10-13"]').innerText(), /5:30pm–midnight/);
   assert.match(await page.locator('[data-date="2026-10-15"]').innerText(), /11am–midnight/);
   assert.equal(await page.locator('[data-date="2026-10-14"]').count(), 0);
+  await page.clock.setFixedTime(new Date('2026-10-19T16:00:00Z'));
+  await page.reload();
+  assert.match(await page.locator('[data-date="2026-10-19"]').innerText(), /Closed$/);
+  assert.match(await page.locator('[data-date="2026-10-26"]').innerText(), /Closed$/);
+  await page.clock.setFixedTime(new Date('2026-12-20T16:00:00Z'));
+  await page.reload();
+  assert.match(await page.locator('[data-date="2026-12-20"]').innerText(), /Closed$/);
+  await page.clock.setFixedTime(new Date('2026-12-28T16:00:00Z'));
+  await page.reload();
+  assert.match(await page.locator('[data-date="2027-01-03"]').innerText(), /Closed$/);
+  assert.equal(await page.locator('[data-date="2027-01-04"]').count(), 0);
+  await page.clock.setFixedTime(new Date('2027-01-04T16:00:00Z'));
+  await page.reload();
+  assert.equal(await rows.innerText(), 'No changes to my typical hours.');
   await page.clock.setFixedTime(new Date('2026-11-02T16:00:00Z'));
   await page.reload();
   assert.match(await page.locator('#schedule-range').innerText(), /November 2, 2026 – November 15, 2026/);
