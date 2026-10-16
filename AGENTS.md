@@ -1,6 +1,7 @@
 # Website change and release workflow
 
 - This Git repository is the authoritative source for future website development. Old ZIP exports and the original local website folder are historical references.
+- Include clickable absolute local preview links to the relevant HTML pages in every website update summary so Caleb can easily review the changes without searching earlier messages.
 - Preserve the owner's visual design and original image quality unless a requested change requires otherwise.
 - Whenever a policy's content changes, update that policy's visible effective date to the revision date.
 - Typical hours stay unchanged unless Caleb explicitly changes them. Maintain dated exceptions separately in the contact page's data-hours-exceptions and LocalBusiness specialOpeningHoursSpecification on every page. In America/New_York time, show 1–2 day closures and adjusted hours within 28 days, and consecutive closures of 3+ calendar days within 84 days. Group each closure into one range, including regular off days within a longer break. Hide ended breaks without changing recurring hours.

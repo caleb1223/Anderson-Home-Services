@@ -54,7 +54,7 @@ test('all pages: content, links, assets, metadata, structured hours and mobile o
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-15', validThrough: '2026-10-15', opens: '11:00', closes: '00:00' },
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-19', validThrough: '2026-10-19', opens: '00:00', closes: '00:00' },
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-26', validThrough: '2026-10-26', opens: '00:00', closes: '00:00' },
-      { '@type': 'OpeningHoursSpecification', validFrom: '2026-12-20', validThrough: '2027-01-03', opens: '00:00', closes: '00:00' }
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-12-20', validThrough: '2027-01-04', opens: '00:00', closes: '00:00' }
     ]);
     const refs = await page.locator('[href], img[src], script[src]').evaluateAll(nodes => nodes.map(n => n.getAttribute('href') || n.getAttribute('src')));
     for (const ref of refs) {
@@ -150,8 +150,8 @@ test('schedule groups closures and uses four- and twelve-week windows in Eastern
   assert.match(await page.locator('[data-date="2026-10-19"]').innerText(), /Closed$/);
   assert.match(await page.locator('[data-date="2026-10-26"]').innerText(), /Closed$/);
   const holiday = page.locator('[data-date="2026-12-20"]');
-  assert.equal(await holiday.getAttribute('data-end-date'), '2027-01-03');
-  assert.match(await holiday.innerText(), /Dec 20, 2026 – Jan 3, 2027/);
+  assert.equal(await holiday.getAttribute('data-end-date'), '2027-01-04');
+  assert.match(await holiday.innerText(), /Dec 20, 2026 – Jan 4, 2027/);
   // 29 vs. 28 days before a one-day closure.
   await visit('2026-09-20T16:00:00Z');
   assert.equal(await page.locator('[data-date="2026-10-19"]').count(), 0);
@@ -162,9 +162,9 @@ test('schedule groups closures and uses four- and twelve-week windows in Eastern
   assert.equal(await holiday.count(), 0);
   await visit('2026-09-27T16:00:00Z');
   assert.equal(await holiday.count(), 1);
-  await visit('2027-01-03T16:00:00Z');
-  assert.equal(await holiday.count(), 1); // Still the same long block on its last day.
   await visit('2027-01-04T16:00:00Z');
+  assert.equal(await holiday.count(), 1); // Still the same long block on its last day.
+  await visit('2027-01-05T16:00:00Z');
   assert.equal(await rows.count(), 0);
   assert.equal(await page.locator('#operating-schedule').innerText(), 'No upcoming schedule changes to show.');
 
