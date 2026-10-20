@@ -54,6 +54,9 @@ test('all pages: content, links, assets, metadata, structured hours and mobile o
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-15', validThrough: '2026-10-15', opens: '11:00', closes: '00:00' },
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-19', validThrough: '2026-10-19', opens: '00:00', closes: '00:00' },
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-10-26', validThrough: '2026-10-26', opens: '00:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-11-01', validThrough: '2026-11-01', opens: '13:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-11-03', validThrough: '2026-11-03', opens: '00:00', closes: '00:00' },
+      { '@type': 'OpeningHoursSpecification', validFrom: '2026-11-12', validThrough: '2026-11-12', opens: '00:00', closes: '00:00' },
       { '@type': 'OpeningHoursSpecification', validFrom: '2026-12-20', validThrough: '2027-01-04', opens: '00:00', closes: '00:00' }
     ]);
     const refs = await page.locator('[href], img[src], script[src]').evaluateAll(nodes => nodes.map(n => n.getAttribute('href') || n.getAttribute('src')));
@@ -146,7 +149,11 @@ test('schedule groups closures and uses four- and twelve-week windows in Eastern
   await visit('2026-10-17T02:00:00Z'); // Still October 16 in Eastern time.
   assert.equal(await page.locator('#upcoming-hours').getAttribute('open'), '');
   const rows = page.locator('#operating-schedule li[data-date]');
-  assert.equal(await rows.count(), 3);
+  assert.equal(await rows.count(), 6);
+  assert.match(await page.locator('[data-date="2026-11-01"]').innerText(), /1pm–midnight$/);
+  assert.match(await page.locator('[data-date="2026-11-03"]').innerText(), /Closed$/);
+  assert.match(await page.locator('[data-date="2026-11-12"]').innerText(), /Closed$/);
+  assert.equal(await page.locator('#schedule-range').count(), 0);
   assert.match(await page.locator('[data-date="2026-10-19"]').innerText(), /Closed$/);
   assert.match(await page.locator('[data-date="2026-10-26"]').innerText(), /Closed$/);
   const holiday = page.locator('[data-date="2026-12-20"]');

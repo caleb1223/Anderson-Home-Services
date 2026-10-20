@@ -45,7 +45,6 @@ if (schedule) {
   const range = new Intl.DateTimeFormat('en-US', {
     timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric'
   });
-  document.getElementById('schedule-range').textContent = 'Eastern time';
   // Group before filtering: a long break remains one block even near its end.
   const blocks = [];
   for (const date of Object.keys(exceptions).sort()) {
